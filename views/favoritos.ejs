@@ -1,0 +1,239 @@
+<%- include("partials/header.ejs") %>
+
+<%- include("partials/navbar.ejs") %>
+
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h1>Meus Carros Favoritos</h1>
+
+            <p>
+                Adicione seus carros favoritos do mundo do rally.
+            </p>
+
+        </div>
+
+
+        <div class="card-body">
+
+
+            <!-- ==========================================
+                 FORMULÁRIO DE CADASTRO
+                 ========================================== -->
+
+            <h2>Adicionar carro favorito</h2>
+
+            <form
+                action="/favoritos/adicionar"
+                method="POST">
+
+
+                <div class="mb-3">
+
+                    <label for="nomeCarro">
+                        Nome do carro
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nomeCarro"
+                        name="nomeCarro"
+                        class="form-control"
+                        placeholder="Ex.: Audi Quattro"
+                        required>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label for="marca">
+                        Marca
+                    </label>
+
+                    <input
+                        type="text"
+                        id="marca"
+                        name="marca"
+                        class="form-control"
+                        placeholder="Ex.: Audi"
+                        required>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label for="categoria">
+                        Categoria
+                    </label>
+
+                    <input
+                        type="text"
+                        id="categoria"
+                        name="categoria"
+                        class="form-control"
+                        placeholder="Ex.: Grupo B">
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label for="ano">
+                        Ano
+                    </label>
+
+                    <input
+                        type="number"
+                        id="ano"
+                        name="ano"
+                        class="form-control"
+                        placeholder="Ex.: 1985">
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    Adicionar aos favoritos
+
+                </button>
+
+            </form>
+
+
+            <hr>
+
+
+            <!-- ==========================================
+                 LISTA DE FAVORITOS
+                 ========================================== -->
+
+            <h2>Meus favoritos</h2>
+
+
+            <% if (favoritos.length === 0) { %>
+
+                <p>
+                    Você ainda não possui carros favoritos.
+                </p>
+
+            <% } else { %>
+
+
+                <% favoritos.forEach(function(favorito) { %>
+
+
+                    <div class="card mb-3">
+
+                        <div class="card-body">
+
+                            <h3>
+                                <%= favorito.nomeCarro %>
+                            </h3>
+
+
+                            <p>
+                                <strong>Marca:</strong>
+                                <%= favorito.marca %>
+                            </p>
+
+
+                            <p>
+                                <strong>Categoria:</strong>
+                                <%= favorito.categoria || "Não informado" %>
+                            </p>
+
+
+                            <p>
+                                <strong>Ano:</strong>
+                                <%= favorito.ano || "Não informado" %>
+                            </p>
+
+
+                            <!-- FORMULÁRIO DE EDIÇÃO -->
+
+                            <form
+                                action="/favoritos/editar/<%= favorito.id %>"
+                                method="POST">
+
+
+                                <input
+                                    type="text"
+                                    name="nomeCarro"
+                                    value="<%= favorito.nomeCarro %>"
+                                    placeholder="Nome do carro"
+                                    required>
+
+
+                                <input
+                                    type="text"
+                                    name="marca"
+                                    value="<%= favorito.marca %>"
+                                    placeholder="Marca"
+                                    required>
+
+
+                                <input
+                                    type="text"
+                                    name="categoria"
+                                    value="<%= favorito.categoria || '' %>"
+                                    placeholder="Categoria">
+
+
+                                <input
+                                    type="number"
+                                    name="ano"
+                                    value="<%= favorito.ano || '' %>"
+                                    placeholder="Ano">
+
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-warning">
+
+                                    Salvar alterações
+
+                                </button>
+
+
+                            </form>
+
+
+                            <br>
+
+
+                            <!-- EXCLUIR -->
+
+                            <a
+                                href="/favoritos/excluir/<%= favorito.id %>"
+                                class="btn btn-danger"
+                                onclick="return confirm('Deseja realmente remover este carro dos favoritos?');">
+
+                                Remover dos favoritos
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                <% }); %>
+
+
+            <% } %>
+
+
+        </div>
+
+    </div>
+
+</div>

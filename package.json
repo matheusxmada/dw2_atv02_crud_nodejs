@@ -1,7 +1,7 @@
 {
-  "name": "atv1-node-site",
+  "name": "dw2_atv02_crud_nodejs",
   "version": "1.0.0",
-  "description": "ATV01 - Criando uma aplicação NodeJS",
+  "description": "ATV02 - Criando uma aplicação NodeJS e implementando um sistema CRUD.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,18 +9,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matheusxmada/atv1-node-site.git"
+    "url": "git+https://github.com/matheusxmada/dw2_atv02_crud_nodejs.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
-    "url": "https://github.com/matheusxmada/atv1-node-site/issues"
+    "url": "https://github.com/matheusxmada/dw2_atv02_crud_nodejs/issues"
   },
-  "homepage": "https://github.com/matheusxmada/atv1-node-site#readme",
+  "homepage": "https://github.com/matheusxmada/dw2_atv02_crud_nodejs#readme",
   "dependencies": {
     "ejs": "^6.0.1",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "mysql2": "^3.24.5",
+    "sequelize": "^6.37.8"
   }
 }
