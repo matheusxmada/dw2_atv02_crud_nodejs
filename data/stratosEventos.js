@@ -128,5 +128,6 @@ const stratosEventos = [
     }
 ];
 
-module.exports = stratosEventos;
+// module.exports = stratosEventos;
+export default stratosEventos;
 // Fontes em: https://en.wikipedia.org/wiki/Lancia_Stratos

@@ -38,6 +38,7 @@ const deltaEventos = [
     }
 ];
 
-module.exports = deltaEventos;
+// module.exports = deltaEventos;
+export default deltaEventos;
 
 // Fontes em: https://pt.wikipedia.org/wiki/Lancia_Delta_S4

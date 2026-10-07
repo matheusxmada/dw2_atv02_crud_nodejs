@@ -163,6 +163,9 @@ const audiEventos = [
     }
 ];
 
-module.exports = audiEventos; // Exporta os dados deste arquivo (audiEventos.js) para que eles possam ser usados no arquivo principal AudiQuattro.ejs. A mesma lógica segue para os outros arquivos.
+// module.exports = audiEventos; // Exporta os dados deste arquivo (audiEventos.js) para que eles possam ser usados no arquivo principal AudiQuattro.ejs. A mesma lógica segue para os outros arquivos.
+// O código acima não será mais usado.
+// // Fonte das informações usadas: https://en.wikipedia.org/wiki/Audi_Quattro#
 
-// Fonte das informações usadas: https://en.wikipedia.org/wiki/Audi_Quattro#
+// Novo método de exportação, já que o index faz import AudiEventos from "./data/audiEventos.js";
+export default audiEventos;

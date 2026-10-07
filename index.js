@@ -17,7 +17,25 @@ import peugeotEventos from "./data/peugeotEventos.js";
 
 // Importando os Controllers
 import ClienteController from "./controllers/ClienteController.js";
-import FavoritosController from "./controllers/FavoritosController.js";
+import FavoritosController from "./controllers/FavoritoController.js";
+
+// Importando o Model de Favoritos
+import Favorito from "./models/Favorito.js";
+
+
+// Testando o Sequelize
+
+connection.authenticate()
+    .then(() => {
+
+        console.log("Banco de dados conectado com sucesso!");
+
+    })
+    .catch((erro) => {
+
+        console.error("Erro ao conectar ao banco:", erro);
+
+    });
 
 
 // Criando o express
@@ -41,92 +59,72 @@ app.use(express.urlencoded({ extended: false }));
 // Conexão com o banco de dados
 
 connection.authenticate()
-  .then(() => {
+    .then(() => {
 
-    console.log(
-      "Conexão com o banco de dados foi realizada com sucesso!"
-    );
+        console.log(
+            "Conexão com o banco de dados foi realizada com sucesso!"
+        );
 
-  })
-  .catch((error) => {
+    })
+    .catch((error) => {
 
-    console.log(
-      `Ocorreu um erro ao se conectar com o banco de dados. Erro: ${error}`
-    );
+        console.log(
+            `Ocorreu um erro ao se conectar com o banco de dados. Erro: ${error}`
+        );
 
-  });
-
-
-// Criando o banco de dados caso não exisat
-
-const DB_NAME = "loja";
-
-connection.query(`CREATE DATABASE IF NOT EXISTS ${DB_NAME};`)
-  .then(() => {
-
-    console.log(`O banco de dados ${DB_NAME} está criado!`);
-
-  })
-  .catch((error) => {
-
-    console.log(
-      `Ocorreu um erro ao criar o banco de dados. Erro: ${error}`
-    );
-
-  });
+    });
 
 
 // Controllers
 
-// Inicianlizando as rotas de Cliente
+// Iniciando as rotas de Cliente
 app.use(ClienteController);
 
 // Inicializando as rotas de Favoritos
 app.use(FavoritosController);
 
-import Favorito from "./models/Favorito.js";
 
 // Rotas principais
 
 // ROTA PRINCIPAL
 app.get("/", (req, res) => {
-  res.render("index");
+    res.render("index");
 });
 
 
 // ROTA SOBRE
 app.get("/about", (req, res) => {
-  res.render("about");
+    res.render("about");
 });
 
 
 // ROTA CONTATO
 app.get("/contact", (req, res) => {
-  res.render("contact");
+    res.render("contact");
 });
 
 
 // ROTA FAQ
 app.get("/faq", (req, res) => {
-  res.render("faq");
+    res.render("faq");
 });
 
 
 // ROTA PRIVACIDADE
 app.get("/privacy", (req, res) => {
-  res.render("privacy");
+    res.render("privacy");
 });
 
 
 // ROTA CRÉDITOS
 app.get("/credits", (req, res) => {
-  res.render("credits");
+    res.render("credits");
 });
 
 
 // ROTA OUTROS
 app.get("/other", (req, res) => {
-  res.render("other");
+    res.render("other");
 });
 
 
@@ -134,16 +132,16 @@ app.get("/other", (req, res) => {
 
 // ROTA DOS CARDS DOS CARROS
 app.get("/cars", (req, res) => {
-  res.render("cars");
+    res.render("cars");
 });
 
 
 // ROTA DO AUDI QUATTRO
 app.get("/AudiQuattro", (req, res) => {
 
-  res.render("carros/AudiQuattro", {
-    audiEventos: audiEventos
-  });
+    res.render("carros/AudiQuattro", {
+        audiEventos: audiEventos
+    });
 
 });
 
@@ -151,9 +149,9 @@ app.get("/AudiQuattro", (req, res) => {
 // ROTA DO LANCIA DELTA
 app.get("/LanciaDelta", (req, res) => {
 
-  res.render("carros/LanciaDelta", {
-    deltaEventos: deltaEventos
-  });
+    res.render("carros/LanciaDelta", {
+        deltaEventos: deltaEventos
+    });
 
 });
 
@@ -161,9 +159,9 @@ app.get("/LanciaDelta", (req, res) => {
 // ROTA DO SUBARU IMPREZA
 app.get("/SubaruImpreza", (req, res) => {
 
-  res.render("carros/SubaruImpreza", {
-    subaruEventos: subaruEventos
-  });
+    res.render("carros/SubaruImpreza", {
+        subaruEventos: subaruEventos
+    });
 
 });
 
@@ -171,9 +169,9 @@ app.get("/SubaruImpreza", (req, res) => {
 // ROTA DO LANCIA STRATOS
 app.get("/LanciaStratos", (req, res) => {
 
-  res.render("carros/LanciaStratos", {
-    stratosEventos: stratosEventos
-  });
+    res.render("carros/LanciaStratos", {
+        stratosEventos: stratosEventos
+    });
 
 });
 
@@ -181,33 +179,9 @@ app.get("/LanciaStratos", (req, res) => {
 // ROTA DO PEUGEOT 205
 app.get("/Peugeot205", (req, res) => {
 
-  res.render("carros/Peugeot205", {
-    peugeotEventos: peugeotEventos
-  });
-
-});
-
-
-// Iniciando o servidor
-
-const port = 3001;
-
-app.listen(port, (error) => {
-
-  // Tratando erros de inicialização
-  if (error) {
-
-    console.log(
-      `Ocorreu um erro ao iniciar o servidor. Erro: ${error}`
-    );
-
-  } else {
-
-    console.log(
-      `Servidor iniciado com sucesso em: http://localhost:${port}`
-    );
-
-  }
+    res.render("carros/Peugeot205", {
+        peugeotEventos: peugeotEventos
+    });
 
 });
 
@@ -224,3 +198,43 @@ connection.sync()
         console.log("Erro ao sincronizar as tabelas:", error);
 
     });
+
+
+// Testando os favoritos
+Favorito.findAll()
+    .then((favoritos) => {
+
+        console.log("Favoritos encontrados:");
+
+        console.log(favoritos);
+
+    })
+    .catch((erro) => {
+
+        console.error("Erro ao buscar favoritos:", erro);
+
+    });
+
+
+// Iniciando o servidor
+
+const port = 3001;
+
+app.listen(port, (error) => {
+
+    // Tratando erros de inicialização
+    if (error) {
+
+        console.log(
+            `Ocorreu um erro ao iniciar o servidor. Erro: ${error}`
+        );
+
+    } else {
+
+        console.log(
+            `Servidor iniciado com sucesso em: http://localhost:${port}`
+        );
+
+    }
+
+});

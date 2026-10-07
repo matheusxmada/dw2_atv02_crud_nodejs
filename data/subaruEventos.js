@@ -282,5 +282,6 @@ const subaruEventos = [
     }
 ];
 
-module.exports = subaruEventos;
+// module.exports = subaruEventos;
+export default subaruEventos;
 // Fontes em: https://en.wikipedia.org/wiki/Subaru_Impreza

@@ -6,104 +6,102 @@
     <div class="card">
 
         <div class="card-header">
-            <h1>Editar Carro Favorito</h1>
+            <h1>Editar carro favorito</h1>
         </div>
 
         <div class="card-body">
 
             <form
                 action="/favoritos/editar/<%= favorito.id %>"
-                method="POST">
+                method="POST"
+            >
 
                 <div class="mb-3">
 
-                    <label for="nomeCarro">
-                        Nome do carro
-                    </label>
+                    <label>Nome do carro</label>
 
                     <input
                         type="text"
-                        id="nomeCarro"
                         name="nomeCarro"
                         class="form-control"
                         value="<%= favorito.nomeCarro %>"
-                        required>
+                        required
+                    >
 
                 </div>
 
 
                 <div class="mb-3">
 
-                    <label for="marca">
-                        Marca
-                    </label>
+                    <label>Marca</label>
 
                     <input
                         type="text"
-                        id="marca"
                         name="marca"
                         class="form-control"
                         value="<%= favorito.marca %>"
-                        required>
+                        required
+                    >
 
                 </div>
 
 
                 <div class="mb-3">
 
-                    <label for="categoria">
-                        Categoria
-                    </label>
+                    <label>Modelo</label>
 
                     <input
                         type="text"
-                        id="categoria"
-                        name="categoria"
+                        name="modelo"
                         class="form-control"
-                        value="<%= favorito.categoria %>">
+                        value="<%= favorito.modelo %>"
+                        required
+                    >
 
                 </div>
 
 
                 <div class="mb-3">
 
-                    <label for="ano">
-                        Ano
-                    </label>
+                    <label>Ano</label>
 
                     <input
                         type="number"
-                        id="ano"
                         name="ano"
                         class="form-control"
-                        value="<%= favorito.ano %>">
+                        value="<%= favorito.ano %>"
+                        required
+                    >
 
                 </div>
 
 
                 <div class="mb-3">
 
-                    <label for="descricao">
-                        Descrição
-                    </label>
+                    <label>Potência (HP)</label>
 
-                    <textarea
-                        id="descricao"
-                        name="descricao"
-                        class="form-control"><%= favorito.descricao %></textarea>
+                    <input
+                        type="number"
+                        name="potenciaHP"
+                        class="form-control"
+                        value="<%= favorito.potenciaHP %>"
+                        required
+                    >
 
                 </div>
 
 
                 <button
                     type="submit"
-                    class="btn btn-success">
+                    class="btn btn-success"
+                >
                     Salvar alterações
                 </button>
 
                 <a
                     href="/favoritos"
-                    class="btn btn-secondary">
+                    class="btn btn-secondary"
+                >
                     Cancelar
                 </a>
 

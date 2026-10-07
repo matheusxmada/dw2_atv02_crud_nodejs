@@ -1,61 +1,42 @@
-// Importando o Sequelize
 import { DataTypes } from "sequelize";
-
-// Importando a conexão
 import connection from "../config/sequelize-config.js";
 
-
-// Criando o Model Favorito
-const Favorito = connection.define("favoritos", {
+const Favorito = connection.define("Favorito", {
 
     id: {
-
         type: DataTypes.INTEGER,
-
         primaryKey: true,
-
         autoIncrement: true
-
     },
-
 
     nomeCarro: {
-
         type: DataTypes.STRING(100),
-
         allowNull: false
-
     },
-
 
     marca: {
-
         type: DataTypes.STRING(100),
-
         allowNull: false
-
     },
 
-
-    categoria: {
-
+    modelo: {
         type: DataTypes.STRING(100),
-
-        allowNull: true
-
+        allowNull: false
     },
-
 
     ano: {
-
         type: DataTypes.INTEGER,
+        allowNull: false
+    },
 
-        allowNull: true
-
+    potenciaHP: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     }
 
+}, {
+    tableName: "favoritos",
+    timestamps: false
 });
 
-
-// Exportando o Model
 export default Favorito;

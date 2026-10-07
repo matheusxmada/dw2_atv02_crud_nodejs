@@ -107,5 +107,6 @@ const peugeotEventos = [
     }
 ];
 
-module.exports = peugeotEventos;
+// module.exports = peugeotEventos;
+export default peugeotEventos;
 // Fontes em: https://en.wikipedia.org/wiki/Peugeot_205
