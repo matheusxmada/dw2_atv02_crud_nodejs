@@ -1,179 +1,412 @@
-<!-- Página de favoritos -->
-<%- include("partials/header.ejs") %>
-<%- include("partials/navbar.ejs") %>
+<!-- Página Carros Favoritos -->
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<div class="container">
+<head>
 
-    <div class="card">
+    <meta charset="UTF-8">
 
-        <div class="card-header">
-            <h1>Carros favoritos</h1>
-        </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <div class="card-body">
+    <title>Carros Favoritos | RALLYHUB</title>
 
-            <form action="/favoritos/cadastrar" method="POST">
+    <link rel="stylesheet" href="/css/style.css">
 
-                <div class="mb-3">
-                    <label>Nome do carro</label>
+</head>
 
-                    <input
-                        type="text"
-                        name="nomeCarro"
-                        class="form-control"
-                        required
-                    >
+<body>
+
+    <!-- Incluindo a navbar -->
+    <%- include("partials/navbar") %>
+
+
+    <main class="favoritos-main">
+
+
+        <!-- Hero -->
+
+        <section class="favoritos-hero">
+
+            <div class="favoritos-hero-content">
+
+                <p class="hero-subtitle">
+                    RALLYHUB / MINHA COLEÇÃO
+                </p>
+
+                <h1>
+                    CARROS<br>
+                    <span>FAVORITOS</span>
+                </h1>
+
+                <p class="hero-text">
+                    Crie sua própria coleção de carros marcantes da
+                    história do Rally, adicionando informações sobre
+                    seus modelos favoritos.
+                </p>
+
+                <a href="#favoritos" class="hero-button">
+                    GERENCIAR FAVORITOS
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Área de favoritos -->
+
+        <section id="favoritos" class="favoritos-section">
+
+            <div class="favoritos-container">
+
+
+                <!-- Cabeçalho da seção -->
+
+                <div class="favoritos-title">
+
+                    <p class="favoritos-subtitle">
+                        MINHA COLEÇÃO
+                    </p>
+
+                    <h2>
+                        SEUS CARROS<br>
+                        <span>FAVORITOS</span>
+                    </h2>
+
+                    <div class="title-line"></div>
+
+                    <p class="favoritos-description">
+                        Adicione, edite ou remova carros da sua coleção
+                        pessoal do RALLYHUB.
+                    </p>
+
                 </div>
 
 
-                <div class="mb-3">
-                    <label>Marca</label>
+                <!-- Formulário -->
 
-                    <input
-                        type="text"
-                        name="marca"
-                        class="form-control"
-                        required
+                <div class="favoritos-form-wrapper">
+
+                    <div class="favoritos-form-header">
+
+                        <span class="form-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <p>
+                                NOVO FAVORITO
+                            </p>
+
+                            <h3>
+                                ADICIONAR CARRO
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        action="/favoritos/cadastrar"
+                        method="POST"
+                        class="favoritos-form"
                     >
-                </div>
 
 
-                <div class="mb-3">
-                    <label>Modelo</label>
+                        <div class="form-group">
 
-                    <input
-                        type="text"
-                        name="modelo"
-                        class="form-control"
-                        required
-                    >
-                </div>
+                            <label for="nomeCarro">
+                                Nome do carro
+                            </label>
 
+                            <input
+                                type="text"
+                                id="nomeCarro"
+                                name="nomeCarro"
+                                placeholder="Ex.: Audi Quattro"
+                                required
+                            >
 
-                <div class="mb-3">
-                    <label>Ano</label>
-
-                    <input
-                        type="number"
-                        name="ano"
-                        class="form-control"
-                        required
-                    >
-                </div>
+                        </div>
 
 
-                <div class="mb-3">
-                    <label>Potência (HP)</label>
+                        <div class="form-group">
 
-                    <input
-                        type="number"
-                        name="potenciaHP"
-                        class="form-control"
-                        required
-                    >
-                </div>
+                            <label for="marca">
+                                Marca
+                            </label>
 
+                            <input
+                                type="text"
+                                id="marca"
+                                name="marca"
+                                placeholder="Ex.: Audi"
+                                required
+                            >
 
-                <button
-                    type="submit"
-                    class="btn btn-primary"
-                >
-                    Adicionar aos favoritos
-                </button>
-
-            </form>
-
-        </div>
-
-    </div>
+                        </div>
 
 
-    <br>
+                        <div class="form-group">
+
+                            <label for="modelo">
+                                Modelo
+                            </label>
+
+                            <input
+                                type="text"
+                                id="modelo"
+                                name="modelo"
+                                placeholder="Ex.: Quattro"
+                                required
+                            >
+
+                        </div>
 
 
-    <div class="card">
+                        <div class="form-group">
 
-        <div class="card-header">
-            <h2>Lista de carros favoritos</h2>
-        </div>
+                            <label for="ano">
+                                Ano
+                            </label>
 
-        <div class="card-body">
+                            <input
+                                type="number"
+                                id="ano"
+                                name="ano"
+                                placeholder="Ex.: 1980"
+                                min="1900"
+                                max="2100"
+                                required
+                            >
 
-            <table class="table table-striped">
+                        </div>
 
-                <thead>
 
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Marca</th>
-                        <th>Modelo</th>
-                        <th>Ano</th>
-                        <th>Potência</th>
-                        <th>Ações</th>
-                    </tr>
+                        <div class="form-group">
 
-                </thead>
+                            <label for="potenciaHP">
+                                Potência
+                            </label>
 
-                <tbody>
+                            <div class="hp-input">
 
-                    <% favoritos.forEach((favorito) => { %>
-
-                        <tr>
-
-                            <td>
-                                <%= favorito.id %>
-                            </td>
-
-                            <td>
-                                <%= favorito.nomeCarro %>
-                            </td>
-
-                            <td>
-                                <%= favorito.marca %>
-                            </td>
-
-                            <td>
-                                <%= favorito.modelo %>
-                            </td>
-
-                            <td>
-                                <%= favorito.ano %>
-                            </td>
-
-                            <td>
-                                <%= favorito.potenciaHP %> HP
-                            </td>
-
-                            <td>
-
-                                <a
-                                    href="/favoritos/editar/<%= favorito.id %>"
-                                    class="btn btn-warning"
+                                <input
+                                    type="number"
+                                    id="potenciaHP"
+                                    name="potenciaHP"
+                                    placeholder="Ex.: 300"
+                                    min="1"
+                                    required
                                 >
-                                    Editar
-                                </a>
 
-                                <a
-                                    href="/favoritos/excluir/<%= favorito.id %>"
-                                    class="btn btn-danger"
-                                    onclick="return confirm('Deseja realmente excluir este carro?')"
-                                >
-                                    Excluir
-                                </a>
+                                <span>HP</span>
 
-                            </td>
+                            </div>
 
-                        </tr>
+                        </div>
 
-                    <% }); %>
 
-                </tbody>
+                        <button
+                            type="submit"
+                            class="favoritos-submit"
+                        >
+                            ADICIONAR AOS FAVORITOS
+                        </button>
 
-            </table>
 
-        </div>
+                    </form>
 
-    </div>
+                </div>
 
-</div>
+
+                <!-- Lista -->
+
+                <div class="favoritos-list-wrapper">
+
+
+                    <div class="favoritos-list-header">
+
+                        <div>
+
+                            <p class="favoritos-subtitle">
+                                COLEÇÃO
+                            </p>
+
+                            <h2>
+                                CARROS SALVOS
+                            </h2>
+
+                        </div>
+
+                        <span class="form-number">
+                            02
+                        </span>
+
+                    </div>
+
+
+                    <div class="favoritos-table-container">
+
+                        <table class="favoritos-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>ID</th>
+
+                                    <th>Carro</th>
+
+                                    <th>Marca</th>
+
+                                    <th>Modelo</th>
+
+                                    <th>Ano</th>
+
+                                    <th>Potência</th>
+
+                                    <th>Ações</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <% if (favoritos.length > 0) { %>
+
+                                    <% favoritos.forEach((favorito) => { %>
+
+                                        <tr>
+
+                                            <td class="favorite-id">
+                                                #<%= favorito.id %>
+                                            </td>
+
+                                            <td class="favorite-name">
+                                                <%= favorito.nomeCarro %>
+                                            </td>
+
+                                            <td>
+                                                <%= favorito.marca %>
+                                            </td>
+
+                                            <td>
+                                                <%= favorito.modelo %>
+                                            </td>
+
+                                            <td>
+                                                <%= favorito.ano %>
+                                            </td>
+
+                                            <td class="favorite-hp">
+                                                <%= favorito.potenciaHP %> HP
+                                            </td>
+
+                                            <td class="favorite-actions">
+
+                                                <a
+                                                    href="/favoritos/editar/<%= favorito.id %>"
+                                                    class="favorite-edit"
+                                                >
+                                                    EDITAR
+                                                </a>
+
+                                                <a
+                                                    href="/favoritos/excluir/<%= favorito.id %>"
+                                                    class="favorite-delete"
+                                                    onclick="return confirm('Deseja realmente excluir este carro?')"
+                                                >
+                                                    EXCLUIR
+                                                </a>
+
+                                            </td>
+
+                                        </tr>
+
+                                    <% }); %>
+
+                                <% } else { %>
+
+                                    <tr>
+
+                                        <td
+                                            colspan="7"
+                                            class="empty-favorites"
+                                        >
+                                            NENHUM CARRO FAVORITO CADASTRADO.
+                                        </td>
+
+                                    </tr>
+
+                                <% } %>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- Seção final -->
+
+        <section class="favoritos-objective">
+
+            <div class="favoritos-objective-content">
+
+                <div class="favoritos-objective-text">
+
+                    <p class="favoritos-subtitle">
+                        SUA COLEÇÃO
+                    </p>
+
+                    <h2>
+                        HISTÓRIA.<br>
+                        VELOCIDADE.<br>
+                        <span>PAIXÃO.</span>
+                    </h2>
+
+                    <p>
+                        Reúna os carros que mais marcaram a história
+                        do Rally e mantenha sua própria coleção dentro
+                        do RALLYHUB.
+                    </p>
+
+                    <a href="/cars" class="hero-button">
+                        EXPLORAR CARROS
+                    </a>
+
+                </div>
+
+
+                <div class="favoritos-objective-image">
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Incluindo o footer -->
+    <%- include("partials/footer") %>
+
+
+</body>
+
+</html>

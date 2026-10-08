@@ -1,2010 +1,681 @@
-/* Página de estilização do site */
+  /* Página de estilização do site */
 
-/* Algumas configurações gerais */
-html,
-body {
-  min-height: 100%;
-}
+  /* Algumas configurações gerais */
+  html,
+  body {
+    min-height: 100%;
+  }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-/* Fazer ocm que o main opcupe toda a tela, colocando o footer sempre em baixo */
-main {
-  flex: 1;
-}
-
-/* Body */
-
-body {
-  margin: 0;
-
-  background:
-    linear-gradient(rgba(18, 18, 18, 0.88), rgba(18, 18, 18, 0.92)),
-    url("/images/wallpaper.jpg");
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  color: #f5f5f5;
-}
-
-/* Navbar */
-
-.navbar {
-  width: 100%;
-
-  background-color: #1c1c1c;
-
-  border-bottom: 3px solid #e10600;
-
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
-}
-
-.navbar-container {
-  width: 92%;
-  max-width: 1400px;
-  min-height: 75px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navbar-logo {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 25px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  white-space: nowrap;
-}
-
-.navbar-logo::first-letter {
-  color: #e10600;
-}
-
-.navbar-logo .last-letter {
-  display: inline;
-  color: #2200e1;
-}
-
-.navbar-menu {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-menu a {
-  position: relative;
-  color: #f5f5f5;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.navbar-menu a:hover {
-  color: #ffc400;
-}
-
-.navbar-menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 0;
-  height: 2px;
-  background-color: #e10600;
-  transition: width 0.2s ease;
-}
-
-.navbar-menu a:hover::after {
-  width: 100%;
-}
-
-@media (max-width: 1000px) {
-  .navbar-container {
+  body {
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px 0;
+  }
+  /* Fazer ocm que o main opcupe toda a tela, colocando o footer sempre em baixo */
+  main {
+    flex: 1;
+  }
+
+  /* Body */
+
+  body {
+    margin: 0;
+
+    background:
+      linear-gradient(rgba(18, 18, 18, 0.88), rgba(18, 18, 18, 0.92)),
+      url("/images/wallpaper.jpg");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #f5f5f5;
+  }
+
+  /* Navbar */
+
+  .navbar {
+    width: 100%;
+
+    background-color: #1c1c1c;
+
+    border-bottom: 3px solid #e10600;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .navbar-container {
+    width: 92%;
+    max-width: 1400px;
+    min-height: 75px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-logo {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+
+  .navbar-logo::first-letter {
+    color: #e10600;
+  }
+
+  .navbar-logo .last-letter {
+    display: inline;
+    color: #2200e1;
   }
 
   .navbar-menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-/* Hero section */
-
-.hero {
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  background:
-    linear-gradient(rgba(18, 18, 18, 0.75), rgba(18, 18, 18, 0.9)),
-    url("/images/");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.hero-content {
-  width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 40px;
-  color: #ae0600;
-  font-size: 40px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-
-  transition:
-    transform 0.2s ease,
-    color 0.2s ease;
-}
-
-.hero-button:hover {
-  transform: translateY(-5px);
-  color: #d10a04;
-}
-
-.hero-button:hover {
-  transform: translateY(-5px);
-  color: #d10a04;
-}
-
-/* Título para o grid dos cards */
-
-.super-title-cards {
-  margin-top: 40px;
-  margin-bottom: 15px;
-  color: #ae0600;
-  font-size: 40px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-align: center;
-}
-
-/* A linha que fica abaixo do título */
-.title-line {
-  width: 240px;
-  height: 4px;
-  margin: 0 auto 40px;
-  background-color: #ffffff;
-}
-
-/* Grid de cards */
-
-.cars-grid {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-/* Card base */
-
-.car-card {
-  --card-color: #e10600;
-  --card-secondary: #ffc400;
-  --card-title: #f5f5f5;
-  --card-text: #999999;
-  --card-overlay: rgba(18, 18, 18, 0.82);
-  --card-overlay-hover: rgba(18, 18, 18, 0.68);
-  --card-image: none;
-  --card-diagonal: rgba(255, 255, 255, 0.04);
-  position: relative;
-  min-height: 250px;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-
-  background-image:
-    linear-gradient(var(--card-overlay), var(--card-overlay)), var(--card-image);
-  background-size: cover;
-  background-position: center;
-  border: 1px solid #333333;
-  border-left: 5px solid var(--card-color);
-  text-decoration: none;
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-
-  /* Variáveis Personalizáveis para os cards no grid */
-  
-  /* --card-color -> cor principal */
-  /* --card-secondary -> cor secundária */
-  /* --card-title -> título */
-  /* --card-text -> descrição */
-  /*--card-overlay -> fundo normal */
-  /*/*--card-overlay-hover -> fundo no hover */
-  /*--card-image -> imagem */
-  /* --card-diagonal -> detalhe da diagonal */
-}
-
-/* Linha superior que aparece ao colocar o mouse em cima*/
-
-.car-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 4px;
-  background-color: var(--card-secondary);
-  transition: width 0.3s ease;
-}
-
-.car-card:hover::before {
-  width: 100%;
-}
-
-/* Detalhe quina diagonal */
-
-.car-card::after {
-  content: "";
-  position: absolute;
-  right: -60px;
-  bottom: -70px;
-  width: 170px;
-  height: 170px;
-  border: 2px solid var(--card-diagonal); /*Chamando a variável com var(--nome-da-variavel) de detalhe da diagonal, para alterar especificamente cada detalhe de cada card.*/
-  transform: rotate(45deg);
-  transition: transform 0.4s ease;
-}
-
-.car-card:hover::after {
-  transform: rotate(45deg) scale(1.25);
-}
-
-/* Efeito hover */
-
-.car-card:hover {
-  transform: translateY(-8px);
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.45),
-    0 0 20px rgba(0, 0, 0, 0.2);
-
-  background-image:
-    linear-gradient(var(--card-overlay-hover), var(--card-overlay-hover)),
-    var(--card-image);
-}
-
-/* Número */
-
-.car-number {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 20px;
-  color: var(--card-secondary);
-  font-size: 42px;
-  line-height: 1;
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: -2px;
-}
-
-.car-number::after {
-  content: "";
-  display: block;
-  width: 35px;
-  height: 3px;
-  margin-top: 10px;
-  background-color: var(--card-color);
-}
-
-.car-card .car-number::before {
-  content: "";
-  position: absolute;
-  left: -30px;
-  top: 18px;
-  width: 18px;
-  height: 2px;
-  background-color: var(--card-color);
-
-  box-shadow:
-    0 6px 0 var(--card-color),
-    0 12px 0 var(--card-color);
-
-  opacity: 0.7;
-}
-
-/* Títuçolo */
-
-.car-card h3 {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 12px;
-  color: var(--card-title);
-  font-size: 22px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-
-  opacity: 0;
-  transform: translateY(15px);
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    color 0.2s ease;
-}
-
-.car-card:hover h3 {
-  color: #ffffff;
-
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Descrição */
-
-.car-card p {
-  position: relative;
-  z-index: 2;
-  max-width: 95%;
-  color: var(--card-text);
-  font-size: 14px;
-  line-height: 1.6;
-
-  opacity: 0;
-  transform: translateY(15px);
-
-  transition:
-    opacity 0.35s ease 0.05s,
-    transform 0.35s ease 0.05s;
-}
-
-.car-card:hover p {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Link */
-
-.car-card span {
-  position: relative;
-  z-index: 2;
-  margin-top: auto;
-  padding-top: 25px;
-  /* color: var(--card-color); */
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 1px;
-
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.car-card:hover span {
-  color: var(--card-secondary);
-  transform: translateX(6px);
-}
-
-/* Estilização específica usando propriedades personalizadas do CSS */
-
-/* Audi Quattro */
-
-.audi-card {
-  --card-color: #fdfdfd;
-  --card-secondary: #ffd000;
-  --card-title: #ffffff;
-  --card-text: #dddddd;
-
-  --card-overlay: rgba(33, 36, 5, 0.748);
-  --card-overlay-hover: rgba(33, 36, 5, 0.648);
-
-  --card-diagonal: rgba(255, 208, 0, 0.15);
-
-  --card-image: url("/images/audi.jpg");
-}
-
-.audi-card:hover {
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.55),
-    0 0 25px rgba(170, 204, 0, 0.3);
-}
-
-/* Lancia Delta */
-
-.delta-card {
-  --card-color: #e30613;
-  --card-secondary: #0066b3;
-  --card-title: #ffffff;
-  --card-text: #dddddd;
-
-  --card-overlay: rgba(45, 0, 0, 0.82);
-  --card-overlay-hover: rgba(45, 0, 0, 0.65);
-
-  --card-diagonal: rgba(62, 136, 186, 0.3);
-
-  --card-image: url("/images/lancia-delta.jpg");
-}
-
-.delta-card:hover {
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.55),
-    0 0 25px rgba(225, 6, 0, 0.3);
-}
-
-/* Subaru Impreza */
-
-.subaru-card {
-  --card-color: #0067b1;
-  --card-secondary: #d7fb3f;
-  --card-title: #ffffff;
-  --card-text: #dddddd;
-
-  --card-overlay: rgba(0, 20, 45, 0.82);
-  --card-overlay-hover: rgba(0, 20, 45, 0.65);
-
-  --card-diagonal: rgba(183, 255, 0, 0.15);
-
-  --card-image: url("/images/subaru.jpg");
-}
-
-.subaru-card:hover {
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.55),
-    0 0 25px rgba(0, 103, 177, 0.3);
-}
-
-/* Lancia Stratos */
-
-.stratos-card {
-  --card-color: #f2f1ec;
-  --card-secondary: #b52b28;
-  --card-title: #ffffff;
-  --card-text: #dddddd;
-
-  --card-overlay: rgba(0, 35, 20, 0.82);
-  --card-overlay-hover: rgba(0, 35, 20, 0.65);
-
-  --card-diagonal: rgba(255, 0, 0, 0.15);
-
-  --card-image: url("/images/lancia-stratos.jpg");
-}
-
-.stratos-card:hover {
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.55),
-    0 0 25px rgba(255, 106, 0, 0.3);
-}
-
-/* Peugeot 205 */
-
-.peugeot-card {
-  --card-color: #e8e8e5;
-  --card-secondary: #155a9c;
-  --card-title: #ffffff;
-  --card-text: #dddddd;
-
-  --card-overlay: rgba(6, 27, 61, 0.82);
-  --card-overlay-hover: rgba(6, 27, 61, 0.65);
-
-  --card-diagonal: rgba(214, 218, 19, 0.3);
-  --card-image: url("/images/peugeot.jpg");
-}
-
-.peugeot-card:hover {
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.55),
-    0 0 25px rgba(249, 250, 251, 0.3);
-}
-
-/* REsponsividade dos cards*/
-
-@media (max-width: 1000px) {
-  .cars-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .cars-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .car-card {
-    min-height: 220px;
-    padding: 25px;
-  }
-
-  .car-number {
-    font-size: 36px;
-  }
-
-  .super-title-cards {
-    font-size: 28px;
-    padding: 0 20px;
-  }
-}
-
-/* Footer */
-
-.footer {
-  margin-top: 60px;
-  background-color: #1c1c1c;
-  border-top: 3px solid #e10600;
-}
-
-.footer-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 45px 0;
-
-  display: flex;
-  justify-content: space-between;
-
-  gap: 60px;
-}
-
-.footer-brand {
-  max-width: 350px;
-}
-
-.footer-brand h2 {
-  margin-bottom: 12px;
-  color: #ffffff;
-  font-size: 25px;
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-
-.footer-brand h2 span {
-  color: #e10600;
-}
-
-.footer-brand p {
-  color: #a0a0a0;
-  line-height: 1.6;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-links h3 {
-  margin-bottom: 8px;
-  color: #ffc400;
-  font-size: 16px;
-  text-transform: uppercase;
-}
-
-.footer-links a {
-  color: #a0a0a0;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: #ffffff;
-}
-
-.footer-bottom {
-  padding: 18px 0;
-  text-align: center;
-  background-color: #121212;
-  border-top: 1px solid #333333;
-}
-
-.footer-bottom p {
-  color: #777777;
-  font-size: 13px;
-}
-
-@media (max-width: 700px) {
-  .footer-container {
-    flex-direction: column;
-    gap: 35px;
-  }
-
-  .footer-brand {
-    max-width: 100%;
-  }
-}
-
-/* Estilização para a página de contatos */
-
-.contact-main {
-  min-height: calc(100vh - 80px);
-
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.75));
-
-  color: #f5f5f5;
-}
-
-/* Hero dos contatoss */
-
-.contact-main .hero-content {
-  width: min(1400px, 82%);
-
-  min-height: 650px;
-
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  align-items: flex-start;
-}
-
-.contact-main .hero-subtitle {
-  color: #d10a04;
-
-  font-size: 14px;
-  font-weight: 900;
-
-  letter-spacing: 5px;
-}
-
-.contact-main .hero-content h1 {
-  margin: 20px 0 0;
-
-  color: #f5f5f5;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(70px, 8vw, 130px);
-
-  font-weight: 900;
-
-  line-height: 0.85;
-
-  letter-spacing: -4px;
-}
-
-.contact-main .hero-content h1 span {
-  color: #d10a04;
-}
-
-.contact-main .hero-text {
-  max-width: 650px;
-
-  margin-top: 35px;
-
-  color: #d0d0d0;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 17px;
-
-  line-height: 1.8;
-}
-
-/* Botão do contatos */
-
-.contact-main .hero-button {
-  margin-top: 35px;
-}
-
-/* Seção do contato */
-
-.contact-section {
-  padding: 110px 0 130px;
-
-  background: #030303;
-
-  border-top: 3px solid #d10a04;
-}
-
-.contact-container {
-  width: min(1400px, 82%);
-
-  margin: 0 auto;
-
-  display: grid;
-
-  grid-template-columns: 0.8fr 1.2fr;
-
-  gap: 100px;
-
-  align-items: start;
-}
-
-/* Informações do contato */
-
-.contact-subtitle {
-  margin: 0;
-
-  color: #d10a04;
-
-  font-size: 14px;
-  font-weight: 900;
-
-  letter-spacing: 5px;
-}
-
-.contact-info h2 {
-  margin: 20px 0 30px;
-
-  color: #f5f5f5;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(45px, 5vw, 75px);
-
-  line-height: 0.9;
-}
-
-.contact-info h2 span {
-  color: #d10a04;
-}
-
-.contact-info > p {
-  max-width: 500px;
-
-  color: #cfcfcf;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 17px;
-
-  line-height: 1.8;
-}
-
-.contact-detail {
-  margin-top: 45px;
-
-  padding-left: 20px;
-
-  border-left: 3px solid #d10a04;
-}
-
-.contact-detail strong {
-  color: #d10a04;
-
-  font-size: 12px;
-
-  letter-spacing: 3px;
-}
-
-.contact-detail p {
-  margin-top: 8px;
-
-  color: #ddd;
-
-  font-size: 15px;
-}
-
-/* Estilização do formulário dos contatos */
-
-.contact-form {
-  padding: 45px;
-
-  border: 1px solid #292929;
-
-  background: #080808;
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 25px;
-}
-
-.form-group {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 10px;
-}
-
-.form-group label {
-  color: #d10a04;
-
-  font-size: 12px;
-  font-weight: 900;
-
-  letter-spacing: 2px;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-
-  box-sizing: border-box;
-
-  padding: 16px 18px;
-
-  border: 1px solid #333;
-
-  outline: none;
-
-  background: #111;
-
-  color: #f5f5f5;
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  font-size: 15px;
-
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #d10a04;
-}
-
-.form-group textarea {
-  resize: vertical;
-}
-
-/* Botão para o formulário dos contatos */
-
-.contact-button {
-  align-self: flex-start;
-
-  padding: 18px 28px;
-
-  border: 1px solid #d10a04;
-
-  background: #d10a04;
-
-  color: #fff;
-
-  cursor: pointer;
-
-  font-size: 13px;
-  font-weight: 900;
-
-  letter-spacing: 1px;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.contact-button:hover {
-  background: transparent;
-
-  color: #d10a04;
-
-  transform: translateX(5px);
-}
-
-/* Responsividade da página de contatos*/
-
-@media (max-width: 900px) {
-  .contact-main .hero-content {
-    width: 88%;
-  }
-
-  .contact-container {
-    width: 88%;
-
-    grid-template-columns: 1fr;
-
-    gap: 60px;
-  }
-}
-
-@media (max-width: 600px) {
-  .contact-main .hero-content {
-    width: 90%;
-
-    min-height: 550px;
-  }
-
-  .contact-main .hero-content h1 {
-    font-size: 65px;
-  }
-
-  .contact-main .hero-text {
-    font-size: 15px;
-  }
-
-  .contact-section {
-    padding: 75px 0 90px;
-  }
-
-  .contact-container {
-    width: 90%;
-  }
-
-  .contact-form {
-    padding: 25px;
-  }
-}
-
-/* Página sobre nós */
-
-.about-main {
-  background: #030303;
-  color: #f5f5f5;
-}
-
-/* Hero do sobre nós */
-
-.about-hero {
-  position: relative;
-
-  min-height: 650px;
-
-  display: flex;
-  align-items: center;
-
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.94) 0%,
-      rgba(0, 0, 0, 0.75) 50%,
-      rgba(0, 0, 0, 0.45) 100%
-    ),
-    url("/images/wallpaper-3.jpg");
-
-  background-size: cover;
-  background-position: center;
-
-  border-bottom: 3px solid #d10a04;
-}
-
-.about-hero-content {
-  width: min(1400px, 82%);
-
-  margin: 0 auto;
-}
-
-.about-hero .hero-subtitle {
-  color: #d10a04;
-
-  font-size: 14px;
-  font-weight: 900;
-
-  letter-spacing: 5px;
-}
-
-.about-hero h1 {
-  margin: 20px 0 0;
-
-  color: #f5f5f5;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(70px, 8vw, 130px);
-
-  font-weight: 900;
-
-  line-height: 0.85;
-
-  letter-spacing: -4px;
-}
-
-.about-hero h1 span {
-  color: #d10a04;
-}
-
-.about-hero .hero-text {
-  max-width: 650px;
-
-  margin-top: 35px;
-
-  color: #d0d0d0;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 17px;
-
-  line-height: 1.8;
-}
-
-.about-hero .hero-button {
-  margin-top: 35px;
-}
-
-/* Seção Sobre */
-
-.about-section {
-  padding: 110px 0 130px;
-
-  background: #030303;
-}
-
-.about-container {
-  width: min(1400px, 82%);
-
-  margin: 0 auto;
-
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 80px;
-
-  align-items: center;
-}
-
-/* Texto do sobre nós */
-
-.about-subtitle {
-  margin: 0;
-
-  color: #d10a04;
-
-  font-size: 14px;
-  font-weight: 900;
-
-  letter-spacing: 5px;
-}
-
-.about-text h2 {
-  margin: 20px 0 0;
-
-  color: #f5f5f5;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(45px, 5vw, 75px);
-
-  font-weight: 900;
-
-  line-height: 0.9;
-}
-
-.about-text h2 span {
-  color: #d10a04;
-}
-
-.about-text .title-line {
-  width: 92px;
-  height: 5px;
-
-  margin-top: 28px;
-
-  background: #d10a04;
-}
-
-.about-text > p:not(.about-subtitle) {
-  max-width: 600px;
-
-  margin-top: 30px;
-
-  color: #cfcfcf;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 17px;
-
-  line-height: 1.9;
-}
-
-/* Imagem do sobre nós */
-
-.about-image {
-  padding: 15px;
-
-  border: 2px solid rgba(209, 10, 4, 0.45);
-}
-
-.about-image img {
-  display: block;
-
-  width: 100%;
-  height: auto;
-
-  object-fit: cover;
-}
-
-/* Obejtivo do sobre nós */
-
-.about-objective {
-  width: 100%;
-  min-height: 730px;
-
-  background: #000;
-
-  overflow: hidden;
-}
-
-/* Divisão do container em duas colunas do sobre nós*/
-
-.about-objective-content {
-  width: 90%;
-  max-width: 1600px;
-  min-height: 730px;
-
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 55% 45%;
-
-  align-items: center;
-}
-
-/* Texto do sobre nós */
-
-.about-objective-text {
-  position: relative;
-
-  z-index: 2;
-
-  padding: 70px 0;
-}
-
-.about-objective-text .about-subtitle {
-  margin-bottom: 20px;
-
-  color: #d10a04;
-
-  font-size: 16px;
-  font-weight: 900;
-
-  letter-spacing: 7px;
-}
-
-.about-objective h2 {
-  margin: 20px 0 0;
-
-  color: #f5f5f5;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(55px, 6vw, 95px);
-
-  font-weight: 900;
-
-  line-height: 0.9;
-}
-
-.about-objective h2 span {
-  color: #d10a04;
-}
-
-/* Texto da seção do sobre nós */
-
-.about-objective-text > p:not(.about-subtitle) {
-  max-width: 750px;
-
-  margin-top: 35px;
-
-  color: #d0d0d0;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 17px;
-
-  line-height: 1.9;
-}
-
-/* Botão do sobre nós */
-
-.about-objective .hero-button {
-  display: inline-flex;
-
-  margin-top: 40px;
-}
-
-/* Imagem do sobre nós */
-
-.about-objective-image {
-  position: relative;
-
-  width: 100%;
-  height: 650px;
-
-  overflow: hidden;
-}
-
-.about-objective-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-/* Gradiente para integrar a imagem com o fundo preto do sobre nós */
-
-.about-objective-image::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background: linear-gradient(
-    90deg,
-    #000 0%,
-    rgba(0, 0, 0, 0.75) 10%,
-    rgba(0, 0, 0, 0.25) 35%,
-    rgba(0, 0, 0, 0.1) 100%
-  );
-}
-
-/* Responsividade da página do sobre nós */
-
-@media (max-width: 900px) {
-  .about-hero-content {
-    width: 88%;
-  }
-
-  .about-container {
-    width: 88%;
-
-    grid-template-columns: 1fr;
-
-    gap: 60px;
-  }
-
-  .about-objective-content {
-    width: 88%;
-
-    grid-template-columns: 1fr;
-
-    min-height: auto;
-
-    padding: 70px 0;
-  }
-
-  .about-objective-image {
-    height: 400px;
-
-    margin-top: 50px;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-objective-content {
-    width: 90%;
-  }
-
-  .about-objective h2 {
-    font-size: 48px;
-  }
-
-  .about-objective-text > p:not(.about-subtitle) {
-    font-size: 15px;
-
-    line-height: 1.8;
-  }
-
-  .about-objective-image {
-    height: 320px;
-  }
-}
-.about-objective {
-  width: 100%;
-  min-height: 730px;
-
-  background: #000;
-
-  overflow: hidden;
-}
-
-/* Estilização da página de Outros Tópicos */
-
-.other-main {
-  width: 100%;
-
-  background: #000;
-
-  color: #f5f5f5;
-}
-
-/* Hero da página Outros Tópicos */
-
-.other-hero {
-  width: 100%;
-  min-height: 550px;
-
-  display: flex;
-  align-items: center;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.95),
-      rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.25)
-    ),
-    url("/images/wallpaper-9.jpg");
-
-  background-size: cover;
-  background-position: center;
-
-  border-bottom: 3px solid #d10a04;
-}
-
-.other-hero-content {
-  width: 90%;
-  max-width: 1500px;
-  color: #d10a04;
-  margin: 0 auto;
-}
-
-.other-hero h1 {
-  margin: 20px 0 0;
-
-  color: #f5f5f5;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(65px, 7vw, 120px);
-
-  font-weight: 900;
-
-  line-height: 0.85;
-
-  letter-spacing: -4px;
-}
-
-.other-hero h1 span {
-  color: #d10a04;
-
-  font-weight: bold;
-}
-
-.other-hero .hero-text {
-  max-width: 700px;
-
-  margin-top: 40px;
-
-  color: #d0d0d0;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 18px;
-
-  line-height: 1.8;
-}
-
-/* Seção dos Outros Tópicos */
-
-.other-topics {
-  width: 100%;
-
-  padding: 100px 0 130px;
-
-  background: #030303;
-}
-
-.other-topics-header {
-  width: 90%;
-  max-width: 1500px;
-
-  margin: 0 auto 65px;
-}
-
-.other-topics-header .about-subtitle {
-  margin-bottom: 20px;
-
-  color: #d10a04;
-
-  font-size: 14px;
-  font-weight: 900;
-
-  letter-spacing: 5px;
-}
-
-.other-topics-header h2 {
-  margin: 0;
-
-  color: #f5f5f5;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(50px, 5vw, 80px);
-
-  font-weight: 900;
-
-  line-height: 0.9;
-}
-
-.other-topics-header h2 span {
-  color: #d10a04;
-}
-
-.other-topics-header > p:last-child {
-  /* > é um combinador de filho direto, indicando que o filho procurado deve ser uma tag <p>, enquanto :last-child filtra para que a regra seja aplicada apenas se o parágrafo for o último dentro do elemento pai.*/
-  max-width: 750px;
-
-  margin-top: 30px;
-
-  color: #cfcfcf;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 17px;
-
-  line-height: 1.8;
-}
-
-.title-line {
-  width: 90px;
-  height: 5px;
-
-  margin-top: 25px;
-
-  background: #d10a04;
-}
-
-/* Cards dos Outros Tópicos */
-
-.other-cards {
-  width: 90%;
-  max-width: 1500px;
-
-  margin: 0 auto;
-
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 25px;
-}
-
-/* Card */
-
-.other-card {
-  position: relative;
-
-  min-height: 520px;
-
-  display: flex;
-  align-items: flex-end;
-
-  overflow: hidden;
-
-  color: #fff;
-
-  text-decoration: none;
-
-  background: #080808;
-
-  border: 1px solid #292929;
-
-  transition:
-    transform 0.4s ease,
-    border-color 0.4s ease;
-}
-
-/* Estilização da imagem de Outros Tópicos */
-.other-card-image {
-  position: absolute;
-
-  inset: 0;
-
-  overflow: hidden;
-}
-
-.other-card-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  transition: transform 0.6s ease;
-}
-
-/* Efeito de overlay na página Outros Tópicos */
-
-.other-card-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0.25) 35%,
-    rgba(0, 0, 0, 0.92) 100%
-  );
-
-  transition: background 0.4s ease;
-}
-
-/* Estilziando o conteúdo da página Outros Tópicos */
-
-.other-card-content {
-  position: relative;
-
-  z-index: 2;
-
-  width: 100%;
-
-  padding: 35px;
-}
-
-.other-card-content > span:first-child {
-  display: block;
-
-  margin-bottom: 15px;
-
-  color: #d10a04;
-
-  font-size: 12px;
-
-  font-weight: 900;
-
-  letter-spacing: 4px;
-}
-
-.other-card-content h3 {
-  margin: 0;
-
-  color: #f5f5f5;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 42px;
-
-  font-weight: 900;
-
-  line-height: 0.95;
-}
-
-.other-card-content h3 strong {
-  color: #d10a04;
-}
-
-.other-card-content p {
-  max-width: 400px;
-
-  margin-top: 25px;
-
-  color: #d5d5d5;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 15px;
-
-  line-height: 1.7;
-}
-
-.other-card-link {
-  display: inline-block;
-
-  margin-top: 25px;
-
-  color: #fff;
-
-  font-size: 13px;
-
-  font-weight: 900;
-
-  letter-spacing: 2px;
-
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-/* Criando o efeito Hover da página Outros Tópicos */
-
-.other-card:hover {
-  transform: translateY(-8px);
-
-  border-color: #d10a04;
-}
-
-.other-card:hover .other-card-image img {
-  transform: scale(1.08);
-}
-
-.other-card:hover .other-card-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.05) 0%,
-    rgba(0, 0, 0, 0.2) 30%,
-    rgba(0, 0, 0, 0.95) 100%
-  );
-}
-
-.other-card:hover .other-card-link {
-  color: #d10a04;
-
-  transform: translateX(6px);
-}
-
-/* Responsividade na página Outros Tópicos */
-
-@media (max-width: 1000px) {
-  .other-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .other-card {
-    min-height: 450px;
-  }
-}
-
-@media (max-width: 600px) {
-  .other-hero {
-    min-height: 500px;
-  }
-
-  .other-hero-content {
-    width: 88%;
-  }
-
-  .other-hero h1 {
-    font-size: 58px;
-  }
-
-  .other-topics {
-    padding: 75px 0 90px;
-  }
-
-  .other-topics-header {
-    width: 88%;
-  }
-
-  .other-cards {
-    width: 88%;
-  }
-
-  .other-card {
-    min-height: 420px;
-  }
-
-  .other-card-content {
-    padding: 25px;
-  }
-
-  .other-card-content h3 {
-    font-size: 34px;
-  }
-}
-
-/* Estilização da página FAQ */
-
-.faq-section {
-  width: 100%;
-  padding: 100px 0 130px;
-  background: #030303;
-}
-
-.faq-container {
-  width: min(1100px, 82%);
-  margin: 0 auto;
-}
-
-/* Itemm FAQ */
-
-.faq-item {
-  position: relative;
-
-  padding: 30px 0;
-
-  border-bottom: 1px solid #292929;
-
-  transition:
-    border-color 0.3s ease,
-    transform 0.3s ease;
-}
-
-/* Primeira linha FAQ */
-
-.faq-item:first-child {
-  border-top: 1px solid #292929;
-}
-
-/* Pergunta FAQ */
-
-.faq-item h3 {
-  margin: 0;
-
-  color: #f5f5f5;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 25px;
-  font-weight: 900;
-
-  line-height: 1.3;
-
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-/* Número da pergunta FAQ */
-
-.faq-item h3::first-letter {
-  color: #d10a04;
-}
-
-/* Resposta FAQ */
-
-.faq-item p {
-  max-width: 900px;
-
-  margin: 18px 0 0;
-
-  color: #bdbdbd;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 16px;
-
-  line-height: 1.8;
-}
-
-/* Efeito hover FAQ */
-
-.faq-item:hover {
-  border-color: #d10a04;
-}
-
-.faq-item:hover h3 {
-  color: #d10a04;
-
-  transform: translateX(6px);
-}
-
-/* Linha vermelha lateral FAQ */
-
-.faq-item::before {
-  content: "";
-
-  position: absolute;
-
-  left: -15px;
-  top: 30px;
-
-  width: 3px;
-  height: 0;
-
-  background: #d10a04;
-
-  transition: height 0.3s ease;
-}
-
-/* Responsividadee FAQ */
-
-@media (max-width: 600px) {
-  .faq-section {
-    padding: 75px 0 90px;
-  }
-
-  .faq-container {
-    width: 90%;
-  }
-
-  .faq-item {
-    padding: 25px 0;
-  }
-
-  .faq-item h3 {
-    font-size: 20px;
-  }
-
-  .faq-item p {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-}
-
-/* Estilização dap ágina Política de Privacidade */
-
-.privacy-main {
-  min-height: calc(100vh - 80px);
-
-  background: #030303;
-
-  color: #f5f5f5;
-}
-
-.privacy-section {
-  min-height: 650px;
-
-  display: flex;
-  align-items: center;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.94) 0%,
-      rgba(0, 0, 0, 0.8) 50%,
-      rgba(0, 0, 0, 0.45) 100%
-    ),
-    url("/images/wallpaper-13.jpeg");
-
-  background-size: cover;
-  background-position: center;
-
-  border-bottom: 3px solid #d10a04;
-}
-
-.privacy-container {
-  width: min(1200px, 82%);
-
-  margin: 0 auto;
-}
-
-/* Subtítulo da Política de Privacidade */
-
-.privacy-subtitle {
-  margin: 0 0 20px;
-
-  color: #d10a04;
-
-  font-size: 14px;
-
-  font-weight: 900;
-
-  letter-spacing: 5px;
-}
-
-/* Título da Política de Privacidade */
-
-.privacy-container h1 {
-  margin: 0;
-
-  color: #f5f5f5;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(60px, 7vw, 110px);
-
-  font-weight: 900;
-
-  line-height: 0.88;
-
-  letter-spacing: -4px;
-}
-
-.privacy-container h1 span {
-  color: #d10a04;
-}
-
-/* Linhas da Política de Privacidade */
-
-.privacy-container .title-line {
-  width: 92px;
-
-  height: 5px;
-
-  margin: 30px 0 35px;
-
-  background: #d10a04;
-}
-
-/* Texto da Política de Privacidade */
-
-.privacy-text {
-  max-width: 850px;
-
-  margin: 0;
-
-  color: #cfcfcf;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 17px;
-
-  line-height: 1.9;
-}
-
-/* Responsividade de Política de Privacidade*/
-
-@media (max-width: 600px) {
-  .privacy-section {
-    min-height: 550px;
-  }
-
-  .privacy-container {
-    width: 90%;
-  }
-
-  .privacy-container h1 {
-    font-size: 52px;
-
-    letter-spacing: -2px;
-  }
-
-  .privacy-text {
-    font-size: 15px;
-
-    line-height: 1.8;
-  }
-}
-
-/* Pagina de Créditos */
-
-.credits-main {
-    width: 100%;
-
-    background: #030303;
-
-    color: #f5f5f5;
-}
-
-
-/* Hero dos Créditos */
-
-.credits-hero {
-    position: relative;
-
-    min-height: 620px;
-
     display: flex;
     align-items: center;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-menu a {
+    position: relative;
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .navbar-menu a:hover {
+    color: #ffc400;
+  }
+
+  .navbar-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background-color: #e10600;
+    transition: width 0.2s ease;
+  }
+
+  .navbar-menu a:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 1000px) {
+    .navbar-container {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .navbar-menu {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  /* Hero section */
+
+  .hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
     background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.95) 0%,
-            rgba(0, 0, 0, 0.78) 50%,
-            rgba(0, 0, 0, 0.40) 100%
-        ),
-        url("/images/wallpaper-11.jpg");
+      linear-gradient(rgba(18, 18, 18, 0.75), rgba(18, 18, 18, 0.9)),
+      url("/images/");
 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+  }
 
-    border-bottom: 3px solid #d10a04;
-}
+  .hero-content {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .hero-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 40px;
+    color: #ae0600;
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 
-.credits-hero-content {
+    transition:
+      transform 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .hero-button:hover {
+    transform: translateY(-5px);
+    color: #d10a04;
+  }
+
+  .hero-button:hover {
+    transform: translateY(-5px);
+    color: #d10a04;
+  }
+
+  /* Título para o grid dos cards */
+
+  .super-title-cards {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #ae0600;
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+
+  /* A linha que fica abaixo do título */
+  .title-line {
+    width: 240px;
+    height: 4px;
+    margin: 0 auto 40px;
+    background-color: #ffffff;
+  }
+
+  /* Grid de cards */
+
+  .cars-grid {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  /* Card base */
+
+  .car-card {
+    --card-color: #e10600;
+    --card-secondary: #ffc400;
+    --card-title: #f5f5f5;
+    --card-text: #999999;
+    --card-overlay: rgba(18, 18, 18, 0.82);
+    --card-overlay-hover: rgba(18, 18, 18, 0.68);
+    --card-image: none;
+    --card-diagonal: rgba(255, 255, 255, 0.04);
+    position: relative;
+    min-height: 250px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    background-image:
+      linear-gradient(var(--card-overlay), var(--card-overlay)), var(--card-image);
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #333333;
+    border-left: 5px solid var(--card-color);
+    text-decoration: none;
+    transition:
+      transform 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+
+    /* Variáveis Personalizáveis para os cards no grid */
+    
+    /* --card-color -> cor principal */
+    /* --card-secondary -> cor secundária */
+    /* --card-title -> título */
+    /* --card-text -> descrição */
+    /*--card-overlay -> fundo normal */
+    /*/*--card-overlay-hover -> fundo no hover */
+    /*--card-image -> imagem */
+    /* --card-diagonal -> detalhe da diagonal */
+  }
+
+  /* Linha superior que aparece ao colocar o mouse em cima*/
+
+  .car-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: var(--card-secondary);
+    transition: width 0.3s ease;
+  }
+
+  .car-card:hover::before {
+    width: 100%;
+  }
+
+  /* Detalhe quina diagonal */
+
+  .car-card::after {
+    content: "";
+    position: absolute;
+    right: -60px;
+    bottom: -70px;
+    width: 170px;
+    height: 170px;
+    border: 2px solid var(--card-diagonal); /*Chamando a variável com var(--nome-da-variavel) de detalhe da diagonal, para alterar especificamente cada detalhe de cada card.*/
+    transform: rotate(45deg);
+    transition: transform 0.4s ease;
+  }
+
+  .car-card:hover::after {
+    transform: rotate(45deg) scale(1.25);
+  }
+
+  /* Efeito hover */
+
+  .car-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.45),
+      0 0 20px rgba(0, 0, 0, 0.2);
+
+    background-image:
+      linear-gradient(var(--card-overlay-hover), var(--card-overlay-hover)),
+      var(--card-image);
+  }
+
+  /* Número */
+
+  .car-number {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+    color: var(--card-secondary);
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -2px;
+  }
+
+  .car-number::after {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 3px;
+    margin-top: 10px;
+    background-color: var(--card-color);
+  }
+
+  .car-card .car-number::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 18px;
+    width: 18px;
+    height: 2px;
+    background-color: var(--card-color);
+
+    box-shadow:
+      0 6px 0 var(--card-color),
+      0 12px 0 var(--card-color);
+
+    opacity: 0.7;
+  }
+
+  /* Títuçolo */
+
+  .car-card h3 {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 12px;
+    color: var(--card-title);
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    opacity: 0;
+    transform: translateY(15px);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      color 0.2s ease;
+  }
+
+  .car-card:hover h3 {
+    color: #ffffff;
+
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Descrição */
+
+  .car-card p {
+    position: relative;
+    z-index: 2;
+    max-width: 95%;
+    color: var(--card-text);
+    font-size: 14px;
+    line-height: 1.6;
+
+    opacity: 0;
+    transform: translateY(15px);
+
+    transition:
+      opacity 0.35s ease 0.05s,
+      transform 0.35s ease 0.05s;
+  }
+
+  .car-card:hover p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Link */
+
+  .car-card span {
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    padding-top: 25px;
+    /* color: var(--card-color); */
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .car-card:hover span {
+    color: var(--card-secondary);
+    transform: translateX(6px);
+  }
+
+  /* Estilização específica usando propriedades personalizadas do CSS */
+
+  /* Audi Quattro */
+
+  .audi-card {
+    --card-color: #fdfdfd;
+    --card-secondary: #ffd000;
+    --card-title: #ffffff;
+    --card-text: #dddddd;
+
+    --card-overlay: rgba(33, 36, 5, 0.748);
+    --card-overlay-hover: rgba(33, 36, 5, 0.648);
+
+    --card-diagonal: rgba(255, 208, 0, 0.15);
+
+    --card-image: url("/images/audi.jpg");
+  }
+
+  .audi-card:hover {
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.55),
+      0 0 25px rgba(170, 204, 0, 0.3);
+  }
+
+  /* Lancia Delta */
+
+  .delta-card {
+    --card-color: #e30613;
+    --card-secondary: #0066b3;
+    --card-title: #ffffff;
+    --card-text: #dddddd;
+
+    --card-overlay: rgba(45, 0, 0, 0.82);
+    --card-overlay-hover: rgba(45, 0, 0, 0.65);
+
+    --card-diagonal: rgba(62, 136, 186, 0.3);
+
+    --card-image: url("/images/lancia-delta.jpg");
+  }
+
+  .delta-card:hover {
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.55),
+      0 0 25px rgba(225, 6, 0, 0.3);
+  }
+
+  /* Subaru Impreza */
+
+  .subaru-card {
+    --card-color: #0067b1;
+    --card-secondary: #d7fb3f;
+    --card-title: #ffffff;
+    --card-text: #dddddd;
+
+    --card-overlay: rgba(0, 20, 45, 0.82);
+    --card-overlay-hover: rgba(0, 20, 45, 0.65);
+
+    --card-diagonal: rgba(183, 255, 0, 0.15);
+
+    --card-image: url("/images/subaru.jpg");
+  }
+
+  .subaru-card:hover {
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.55),
+      0 0 25px rgba(0, 103, 177, 0.3);
+  }
+
+  /* Lancia Stratos */
+
+  .stratos-card {
+    --card-color: #f2f1ec;
+    --card-secondary: #b52b28;
+    --card-title: #ffffff;
+    --card-text: #dddddd;
+
+    --card-overlay: rgba(0, 35, 20, 0.82);
+    --card-overlay-hover: rgba(0, 35, 20, 0.65);
+
+    --card-diagonal: rgba(255, 0, 0, 0.15);
+
+    --card-image: url("/images/lancia-stratos.jpg");
+  }
+
+  .stratos-card:hover {
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.55),
+      0 0 25px rgba(255, 106, 0, 0.3);
+  }
+
+  /* Peugeot 205 */
+
+  .peugeot-card {
+    --card-color: #e8e8e5;
+    --card-secondary: #155a9c;
+    --card-title: #ffffff;
+    --card-text: #dddddd;
+
+    --card-overlay: rgba(6, 27, 61, 0.82);
+    --card-overlay-hover: rgba(6, 27, 61, 0.65);
+
+    --card-diagonal: rgba(214, 218, 19, 0.3);
+    --card-image: url("/images/peugeot.jpg");
+  }
+
+  .peugeot-card:hover {
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.55),
+      0 0 25px rgba(249, 250, 251, 0.3);
+  }
+
+  /* REsponsividade dos cards*/
+
+  @media (max-width: 1000px) {
+    .cars-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .cars-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .car-card {
+      min-height: 220px;
+      padding: 25px;
+    }
+
+    .car-number {
+      font-size: 36px;
+    }
+
+    .super-title-cards {
+      font-size: 28px;
+      padding: 0 20px;
+    }
+  }
+
+  /* Footer */
+
+  .footer {
+    margin-top: 60px;
+    background-color: #1c1c1c;
+    border-top: 3px solid #e10600;
+  }
+
+  .footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 60px;
+  }
+
+  .footer-brand {
+    max-width: 350px;
+  }
+
+  .footer-brand h2 {
+    margin-bottom: 12px;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 2px;
+  }
+
+  .footer-brand h2 span {
+    color: #e10600;
+  }
+
+  .footer-brand p {
+    color: #a0a0a0;
+    line-height: 1.6;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links h3 {
+    margin-bottom: 8px;
+    color: #ffc400;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  .footer-links a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    color: #ffffff;
+  }
+
+  .footer-bottom {
+    padding: 18px 0;
+    text-align: center;
+    background-color: #121212;
+    border-top: 1px solid #333333;
+  }
+
+  .footer-bottom p {
+    color: #777777;
+    font-size: 13px;
+  }
+
+  @media (max-width: 700px) {
+    .footer-container {
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    .footer-brand {
+      max-width: 100%;
+    }
+  }
+
+  /* Estilização para a página de contatos */
+
+  .contact-main {
+    min-height: calc(100vh - 80px);
+
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.75));
+
+    color: #f5f5f5;
+  }
+
+  /* Hero dos contatoss */
+
+  .contact-main .hero-content {
     width: min(1400px, 82%);
 
+    min-height: 650px;
+
     margin: 0 auto;
-}
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-/* Subtítulo dos Créditos */
+    align-items: flex-start;
+  }
 
-.credits-subtitle {
-    margin: 0;
-
+  .contact-main .hero-subtitle {
     color: #d10a04;
 
     font-size: 14px;
-
     font-weight: 900;
 
     letter-spacing: 5px;
-}
+  }
 
-
-/* Título dos Créditos */
-
-.credits-hero h1 {
+  .contact-main .hero-content h1 {
     margin: 20px 0 0;
 
     color: #f5f5f5;
@@ -2018,17 +689,13 @@ body {
     line-height: 0.85;
 
     letter-spacing: -4px;
-}
+  }
 
-
-.credits-hero h1 span {
+  .contact-main .hero-content h1 span {
     color: #d10a04;
-}
+  }
 
-
-/* Texto dos Créditos */
-
-.credits-hero-text {
+  .contact-main .hero-text {
     max-width: 650px;
 
     margin-top: 35px;
@@ -2040,222 +707,473 @@ body {
     font-size: 17px;
 
     line-height: 1.8;
-}
+  }
 
+  /* Botão do contatos */
 
-/* Seção de Créditos */
+  .contact-main .hero-button {
+    margin-top: 35px;
+  }
 
-.credits-section {
-    width: 100%;
+  /* Seção do contato */
 
+  .contact-section {
     padding: 110px 0 130px;
 
     background: #030303;
-}
 
+    border-top: 3px solid #d10a04;
+  }
 
-.credits-container {
+  .contact-container {
     width: min(1400px, 82%);
 
     margin: 0 auto;
-}
 
+    display: grid;
 
-/* Cabeçalho dos Créditos */
+    grid-template-columns: 0.8fr 1.2fr;
 
-.credits-header {
-    margin-bottom: 65px;
-}
+    gap: 100px;
 
+    align-items: start;
+  }
 
-.credits-header h2 {
+  /* Informações do contato */
+
+  .contact-subtitle {
+    margin: 0;
+
+    color: #d10a04;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 5px;
+  }
+
+  .contact-info h2 {
+    margin: 20px 0 30px;
+
+    color: #f5f5f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(45px, 5vw, 75px);
+
+    line-height: 0.9;
+  }
+
+  .contact-info h2 span {
+    color: #d10a04;
+  }
+
+  .contact-info > p {
+    max-width: 500px;
+
+    color: #cfcfcf;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+  .contact-detail {
+    margin-top: 45px;
+
+    padding-left: 20px;
+
+    border-left: 3px solid #d10a04;
+  }
+
+  .contact-detail strong {
+    color: #d10a04;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+  }
+
+  .contact-detail p {
+    margin-top: 8px;
+
+    color: #ddd;
+
+    font-size: 15px;
+  }
+
+  /* Estilização do formulário dos contatos */
+
+  .contact-form {
+    padding: 45px;
+
+    border: 1px solid #292929;
+
+    background: #080808;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .form-group label {
+    color: #d10a04;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 16px 18px;
+
+    border: 1px solid #333;
+
+    outline: none;
+
+    background: #111;
+
+    color: #f5f5f5;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #d10a04;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  /* Botão para o formulário dos contatos */
+
+  .contact-button {
+    align-self: flex-start;
+
+    padding: 18px 28px;
+
+    border: 1px solid #d10a04;
+
+    background: #d10a04;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .contact-button:hover {
+    background: transparent;
+
+    color: #d10a04;
+
+    transform: translateX(5px);
+  }
+
+  /* Responsividade da página de contatos*/
+
+  @media (max-width: 900px) {
+    .contact-main .hero-content {
+      width: 88%;
+    }
+
+    .contact-container {
+      width: 88%;
+
+      grid-template-columns: 1fr;
+
+      gap: 60px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .contact-main .hero-content {
+      width: 90%;
+
+      min-height: 550px;
+    }
+
+    .contact-main .hero-content h1 {
+      font-size: 65px;
+    }
+
+    .contact-main .hero-text {
+      font-size: 15px;
+    }
+
+    .contact-section {
+      padding: 75px 0 90px;
+    }
+
+    .contact-container {
+      width: 90%;
+    }
+
+    .contact-form {
+      padding: 25px;
+    }
+  }
+
+  /* Página sobre nós */
+
+  .about-main {
+    background: #030303;
+    color: #f5f5f5;
+  }
+
+  /* Hero do sobre nós */
+
+  .about-hero {
+    position: relative;
+
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.94) 0%,
+        rgba(0, 0, 0, 0.75) 50%,
+        rgba(0, 0, 0, 0.45) 100%
+      ),
+      url("/images/wallpaper-3.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 3px solid #d10a04;
+  }
+
+  .about-hero-content {
+    width: min(1400px, 82%);
+
+    margin: 0 auto;
+  }
+
+  .about-hero .hero-subtitle {
+    color: #d10a04;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 5px;
+  }
+
+  .about-hero h1 {
     margin: 20px 0 0;
 
     color: #f5f5f5;
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(50px, 5vw, 80px);
+    font-size: clamp(70px, 8vw, 130px);
 
     font-weight: 900;
 
-    line-height: 0.9;
-}
+    line-height: 0.85;
 
+    letter-spacing: -4px;
+  }
 
-.credits-header h2 span {
+  .about-hero h1 span {
     color: #d10a04;
-}
+  }
 
+  .about-hero .hero-text {
+    max-width: 650px;
 
-/* Linha dos Créditos */
+    margin-top: 35px;
 
-.credits-header .title-line {
-    width: 92px;
+    color: #d0d0d0;
 
-    height: 5px;
+    font-family: Georgia, "Times New Roman", serif;
 
-    margin-top: 28px;
+    font-size: 17px;
 
-    background: #d10a04;
-}
+    line-height: 1.8;
+  }
 
+  .about-hero .hero-button {
+    margin-top: 35px;
+  }
 
-/* Cards dos créditos */
+  /* Seção Sobre */
 
-.credits-grid {
+  .about-section {
+    padding: 110px 0 130px;
+
+    background: #030303;
+  }
+
+  .about-container {
+    width: min(1400px, 82%);
+
+    margin: 0 auto;
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
 
-    gap: 25px;
-}
+    gap: 80px;
 
+    align-items: center;
+  }
 
-.credit-card {
-    position: relative;
+  /* Texto do sobre nós */
 
-    min-height: 250px;
-
-    padding: 35px;
-
-    background: #080808;
-
-    border: 1px solid #292929;
-
-    overflow: hidden;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-/* Número dos Créditos */
-
-/* .credit-number {
-    display: block;
-
-    margin-bottom: 35px;
+  .about-subtitle {
+    margin: 0;
 
     color: #d10a04;
 
-    font-size: 38px;
-
+    font-size: 14px;
     font-weight: 900;
 
-    font-style: italic;
+    letter-spacing: 5px;
+  }
 
-    letter-spacing: -2px;
-} */
-
-
-/* Pequena linha dos Créditos */
-
-.credit-number::after {
-    content: "";
-
-    display: block;
-
-    width: 35px;
-
-    height: 3px;
-
-    margin-top: 10px;
-
-    background: #d10a04;
-}
-
-
-/* Título dos Créditos */
-
-.credit-card h3 {
-    margin: 0;
+  .about-text h2 {
+    margin: 20px 0 0;
 
     color: #f5f5f5;
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 25px;
+    font-size: clamp(45px, 5vw, 75px);
 
     font-weight: 900;
 
-    line-height: 1;
-}
+    line-height: 0.9;
+  }
 
+  .about-text h2 span {
+    color: #d10a04;
+  }
 
-/* Texto dos Créditos */
+  .about-text .title-line {
+    width: 92px;
+    height: 5px;
 
-.credit-card p {
-    margin-top: 22px;
+    margin-top: 28px;
 
-    color: #aaa;
+    background: #d10a04;
+  }
+
+  .about-text > p:not(.about-subtitle) {
+    max-width: 600px;
+
+    margin-top: 30px;
+
+    color: #cfcfcf;
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 15px;
+    font-size: 17px;
 
-    line-height: 1.8;
-}
+    line-height: 1.9;
+  }
 
+  /* Imagem do sobre nós */
 
-/* Hover dos Créditos */
+  .about-image {
+    padding: 15px;
 
-.credit-card::before {
-    content: "";
+    border: 2px solid rgba(209, 10, 4, 0.45);
+  }
 
-    position: absolute;
+  .about-image img {
+    display: block;
 
-    top: 0;
-    left: 0;
+    width: 100%;
+    height: auto;
 
-    width: 0;
-    height: 4px;
+    object-fit: cover;
+  }
 
-    background: #d10a04;
+  /* Obejtivo do sobre nós */
 
-    transition: width 0.3s ease;
-}
+  .about-objective {
+    width: 100%;
+    min-height: 730px;
 
+    background: #000;
 
-/* Seção Final Créditos */
+    overflow: hidden;
+  }
 
-.credits-final {
-    position: relative;
+  /* Divisão do container em duas colunas do sobre nós*/
 
-    min-height: 580px;
-
-    display: flex;
-
-    align-items: center;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.94) 0%,
-            rgba(0, 0, 0, 0.78) 50%,
-            rgba(0, 0, 0, 0.40) 100%
-        ),
-        url("/images/wallpaper-12.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    border-top: 1px solid #292929;
-}
-
-
-.credits-final-content {
-    width: min(1400px, 82%);
+  .about-objective-content {
+    width: 90%;
+    max-width: 1600px;
+    min-height: 730px;
 
     margin: 0 auto;
-}
 
+    display: grid;
+    grid-template-columns: 55% 45%;
 
-.credits-final h2 {
-    margin: 25px 0 0;
+    align-items: center;
+  }
+
+  /* Texto do sobre nós */
+
+  .about-objective-text {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 70px 0;
+  }
+
+  .about-objective-text .about-subtitle {
+    margin-bottom: 20px;
+
+    color: #d10a04;
+
+    font-size: 16px;
+    font-weight: 900;
+
+    letter-spacing: 7px;
+  }
+
+  .about-objective h2 {
+    margin: 20px 0 0;
 
     color: #f5f5f5;
 
@@ -2266,50 +1184,2065 @@ body {
     font-weight: 900;
 
     line-height: 0.9;
-}
+  }
 
-
-.credits-final h2 span {
+  .about-objective h2 span {
     color: #d10a04;
-}
+  }
 
+  /* Texto da seção do sobre nós */
 
-.credits-final .hero-button {
+  .about-objective-text > p:not(.about-subtitle) {
+    max-width: 750px;
+
+    margin-top: 35px;
+
+    color: #d0d0d0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+  }
+
+  /* Botão do sobre nós */
+
+  .about-objective .hero-button {
     display: inline-flex;
 
     margin-top: 40px;
+  }
+
+  /* Imagem do sobre nós */
+
+  .about-objective-image {
+    position: relative;
+
+    width: 100%;
+    height: 650px;
+
+    overflow: hidden;
+  }
+
+  .about-objective-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+  }
+
+  /* Gradiente para integrar a imagem com o fundo preto do sobre nós */
+
+  .about-objective-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+      90deg,
+      #000 0%,
+      rgba(0, 0, 0, 0.75) 10%,
+      rgba(0, 0, 0, 0.25) 35%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+  }
+
+  /* Responsividade da página do sobre nós */
+
+  @media (max-width: 900px) {
+    .about-hero-content {
+      width: 88%;
+    }
+
+    .about-container {
+      width: 88%;
+
+      grid-template-columns: 1fr;
+
+      gap: 60px;
+    }
+
+    .about-objective-content {
+      width: 88%;
+
+      grid-template-columns: 1fr;
+
+      min-height: auto;
+
+      padding: 70px 0;
+    }
+
+    .about-objective-image {
+      height: 400px;
+
+      margin-top: 50px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .about-objective-content {
+      width: 90%;
+    }
+
+    .about-objective h2 {
+      font-size: 48px;
+    }
+
+    .about-objective-text > p:not(.about-subtitle) {
+      font-size: 15px;
+
+      line-height: 1.8;
+    }
+
+    .about-objective-image {
+      height: 320px;
+    }
+  }
+  .about-objective {
+    width: 100%;
+    min-height: 730px;
+
+    background: #000;
+
+    overflow: hidden;
+  }
+
+  /* Estilização da página de Outros Tópicos */
+
+  .other-main {
+    width: 100%;
+
+    background: #000;
+
+    color: #f5f5f5;
+  }
+
+  /* Hero da página Outros Tópicos */
+
+  .other-hero {
+    width: 100%;
+    min-height: 550px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.95),
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.25)
+      ),
+      url("/images/wallpaper-9.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 3px solid #d10a04;
+  }
+
+  .other-hero-content {
+    width: 90%;
+    max-width: 1500px;
+    color: #d10a04;
+    margin: 0 auto;
+  }
+
+  .other-hero h1 {
+    margin: 20px 0 0;
+
+    color: #f5f5f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(65px, 7vw, 120px);
+
+    font-weight: 900;
+
+    line-height: 0.85;
+
+    letter-spacing: -4px;
+  }
+
+  .other-hero h1 span {
+    color: #d10a04;
+
+    font-weight: bold;
+  }
+
+  .other-hero .hero-text {
+    max-width: 700px;
+
+    margin-top: 40px;
+
+    color: #d0d0d0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+  }
+
+  /* Seção dos Outros Tópicos */
+
+  .other-topics {
+    width: 100%;
+
+    padding: 100px 0 130px;
+
+    background: #030303;
+  }
+
+  .other-topics-header {
+    width: 90%;
+    max-width: 1500px;
+
+    margin: 0 auto 65px;
+  }
+
+  .other-topics-header .about-subtitle {
+    margin-bottom: 20px;
+
+    color: #d10a04;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 5px;
+  }
+
+  .other-topics-header h2 {
+    margin: 0;
+
+    color: #f5f5f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(50px, 5vw, 80px);
+
+    font-weight: 900;
+
+    line-height: 0.9;
+  }
+
+  .other-topics-header h2 span {
+    color: #d10a04;
+  }
+
+  .other-topics-header > p:last-child {
+    /* > é um combinador de filho direto, indicando que o filho procurado deve ser uma tag <p>, enquanto :last-child filtra para que a regra seja aplicada apenas se o parágrafo for o último dentro do elemento pai.*/
+    max-width: 750px;
+
+    margin-top: 30px;
+
+    color: #cfcfcf;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+  .title-line {
+    width: 90px;
+    height: 5px;
+
+    margin-top: 25px;
+
+    background: #d10a04;
+  }
+
+  /* Cards dos Outros Tópicos */
+
+  .other-cards {
+    width: 90%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+  }
+
+  /* Card */
+
+  .other-card {
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    background: #080808;
+
+    border: 1px solid #292929;
+
+    transition:
+      transform 0.4s ease,
+      border-color 0.4s ease;
+  }
+
+  /* Estilização da imagem de Outros Tópicos */
+  .other-card-image {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+  }
+
+  .other-card-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+  }
+
+  /* Efeito de overlay na página Outros Tópicos */
+
+  .other-card-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.25) 35%,
+      rgba(0, 0, 0, 0.92) 100%
+    );
+
+    transition: background 0.4s ease;
+  }
+
+  /* Estilziando o conteúdo da página Outros Tópicos */
+
+  .other-card-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    padding: 35px;
+  }
+
+  .other-card-content > span:first-child {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #d10a04;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+  }
+
+  .other-card-content h3 {
+    margin: 0;
+
+    color: #f5f5f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+
+    font-weight: 900;
+
+    line-height: 0.95;
+  }
+
+  .other-card-content h3 strong {
+    color: #d10a04;
+  }
+
+  .other-card-content p {
+    max-width: 400px;
+
+    margin-top: 25px;
+
+    color: #d5d5d5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+  .other-card-link {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color: #fff;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  /* Criando o efeito Hover da página Outros Tópicos */
+
+  .other-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #d10a04;
+  }
+
+  .other-card:hover .other-card-image img {
+    transform: scale(1.08);
+  }
+
+  .other-card:hover .other-card-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0.95) 100%
+    );
+  }
+
+  .other-card:hover .other-card-link {
+    color: #d10a04;
+
+    transform: translateX(6px);
+  }
+
+  /* Responsividade na página Outros Tópicos */
+
+  @media (max-width: 1000px) {
+    .other-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .other-card {
+      min-height: 450px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .other-hero {
+      min-height: 500px;
+    }
+
+    .other-hero-content {
+      width: 88%;
+    }
+
+    .other-hero h1 {
+      font-size: 58px;
+    }
+
+    .other-topics {
+      padding: 75px 0 90px;
+    }
+
+    .other-topics-header {
+      width: 88%;
+    }
+
+    .other-cards {
+      width: 88%;
+    }
+
+    .other-card {
+      min-height: 420px;
+    }
+
+    .other-card-content {
+      padding: 25px;
+    }
+
+    .other-card-content h3 {
+      font-size: 34px;
+    }
+  }
+
+  /* Estilização da página FAQ */
+
+  .faq-section {
+    width: 100%;
+    padding: 100px 0 130px;
+    background: #030303;
+  }
+
+  .faq-container {
+    width: min(1100px, 82%);
+    margin: 0 auto;
+  }
+
+  /* Itemm FAQ */
+
+  .faq-item {
+    position: relative;
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid #292929;
+
+    transition:
+      border-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  /* Primeira linha FAQ */
+
+  .faq-item:first-child {
+    border-top: 1px solid #292929;
+  }
+
+  /* Pergunta FAQ */
+
+  .faq-item h3 {
+    margin: 0;
+
+    color: #f5f5f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+    font-weight: 900;
+
+    line-height: 1.3;
+
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  /* Número da pergunta FAQ */
+
+  .faq-item h3::first-letter {
+    color: #d10a04;
+  }
+
+  /* Resposta FAQ */
+
+  .faq-item p {
+    max-width: 900px;
+
+    margin: 18px 0 0;
+
+    color: #bdbdbd;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+  }
+
+  /* Efeito hover FAQ */
+
+  .faq-item:hover {
+    border-color: #d10a04;
+  }
+
+  .faq-item:hover h3 {
+    color: #d10a04;
+
+    transform: translateX(6px);
+  }
+
+  /* Linha vermelha lateral FAQ */
+
+  .faq-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: -15px;
+    top: 30px;
+
+    width: 3px;
+    height: 0;
+
+    background: #d10a04;
+
+    transition: height 0.3s ease;
+  }
+
+  /* Responsividadee FAQ */
+
+  @media (max-width: 600px) {
+    .faq-section {
+      padding: 75px 0 90px;
+    }
+
+    .faq-container {
+      width: 90%;
+    }
+
+    .faq-item {
+      padding: 25px 0;
+    }
+
+    .faq-item h3 {
+      font-size: 20px;
+    }
+
+    .faq-item p {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+  }
+
+  /* Estilização dap ágina Política de Privacidade */
+
+  .privacy-main {
+    min-height: calc(100vh - 80px);
+
+    background: #030303;
+
+    color: #f5f5f5;
+  }
+
+  .privacy-section {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.94) 0%,
+        rgba(0, 0, 0, 0.8) 50%,
+        rgba(0, 0, 0, 0.45) 100%
+      ),
+      url("/images/wallpaper-13.jpeg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 3px solid #d10a04;
+  }
+
+  .privacy-container {
+    width: min(1200px, 82%);
+
+    margin: 0 auto;
+  }
+
+  /* Subtítulo da Política de Privacidade */
+
+  .privacy-subtitle {
+    margin: 0 0 20px;
+
+    color: #d10a04;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: 5px;
+  }
+
+  /* Título da Política de Privacidade */
+
+  .privacy-container h1 {
+    margin: 0;
+
+    color: #f5f5f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(60px, 7vw, 110px);
+
+    font-weight: 900;
+
+    line-height: 0.88;
+
+    letter-spacing: -4px;
+  }
+
+  .privacy-container h1 span {
+    color: #d10a04;
+  }
+
+  /* Linhas da Política de Privacidade */
+
+  .privacy-container .title-line {
+    width: 92px;
+
+    height: 5px;
+
+    margin: 30px 0 35px;
+
+    background: #d10a04;
+  }
+
+  /* Texto da Política de Privacidade */
+
+  .privacy-text {
+    max-width: 850px;
+
+    margin: 0;
+
+    color: #cfcfcf;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+  }
+
+  /* Responsividade de Política de Privacidade*/
+
+  @media (max-width: 600px) {
+    .privacy-section {
+      min-height: 550px;
+    }
+
+    .privacy-container {
+      width: 90%;
+    }
+
+    .privacy-container h1 {
+      font-size: 52px;
+
+      letter-spacing: -2px;
+    }
+
+    .privacy-text {
+      font-size: 15px;
+
+      line-height: 1.8;
+    }
+  }
+
+  /* Pagina de Créditos */
+
+  .credits-main {
+      width: 100%;
+
+      background: #030303;
+
+      color: #f5f5f5;
+  }
+
+
+  /* Hero dos Créditos */
+
+  .credits-hero {
+      position: relative;
+
+      min-height: 620px;
+
+      display: flex;
+      align-items: center;
+
+      background:
+          linear-gradient(
+              90deg,
+              rgba(0, 0, 0, 0.95) 0%,
+              rgba(0, 0, 0, 0.78) 50%,
+              rgba(0, 0, 0, 0.40) 100%
+          ),
+          url("/images/wallpaper-11.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+      border-bottom: 3px solid #d10a04;
+  }
+
+
+  .credits-hero-content {
+      width: min(1400px, 82%);
+
+      margin: 0 auto;
+  }
+
+
+  /* Subtítulo dos Créditos */
+
+  .credits-subtitle {
+      margin: 0;
+
+      color: #d10a04;
+
+      font-size: 14px;
+
+      font-weight: 900;
+
+      letter-spacing: 5px;
+  }
+
+
+  /* Título dos Créditos */
+
+  .credits-hero h1 {
+      margin: 20px 0 0;
+
+      color: #f5f5f5;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: clamp(70px, 8vw, 130px);
+
+      font-weight: 900;
+
+      line-height: 0.85;
+
+      letter-spacing: -4px;
+  }
+
+
+  .credits-hero h1 span {
+      color: #d10a04;
+  }
+
+
+  /* Texto dos Créditos */
+
+  .credits-hero-text {
+      max-width: 650px;
+
+      margin-top: 35px;
+
+      color: #d0d0d0;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 17px;
+
+      line-height: 1.8;
+  }
+
+
+  /* Seção de Créditos */
+
+  .credits-section {
+      width: 100%;
+
+      padding: 110px 0 130px;
+
+      background: #030303;
+  }
+
+
+  .credits-container {
+      width: min(1400px, 82%);
+
+      margin: 0 auto;
+  }
+
+
+  /* Cabeçalho dos Créditos */
+
+  .credits-header {
+      margin-bottom: 65px;
+  }
+
+
+  .credits-header h2 {
+      margin: 20px 0 0;
+
+      color: #f5f5f5;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: clamp(50px, 5vw, 80px);
+
+      font-weight: 900;
+
+      line-height: 0.9;
+  }
+
+
+  .credits-header h2 span {
+      color: #d10a04;
+  }
+
+
+  /* Linha dos Créditos */
+
+  .credits-header .title-line {
+      width: 92px;
+
+      height: 5px;
+
+      margin-top: 28px;
+
+      background: #d10a04;
+  }
+
+
+  /* Cards dos créditos */
+
+  .credits-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 25px;
+  }
+
+
+  .credit-card {
+      position: relative;
+
+      min-height: 250px;
+
+      padding: 35px;
+
+      background: #080808;
+
+      border: 1px solid #292929;
+
+      overflow: hidden;
+
+      transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+  }
+
+
+  /* Número dos Créditos */
+
+  /* .credit-number {
+      display: block;
+
+      margin-bottom: 35px;
+
+      color: #d10a04;
+
+      font-size: 38px;
+
+      font-weight: 900;
+
+      font-style: italic;
+
+      letter-spacing: -2px;
+  } */
+
+
+  /* Pequena linha dos Créditos */
+
+  .credit-number::after {
+      content: "";
+
+      display: block;
+
+      width: 35px;
+
+      height: 3px;
+
+      margin-top: 10px;
+
+      background: #d10a04;
+  }
+
+
+  /* Título dos Créditos */
+
+  .credit-card h3 {
+      margin: 0;
+
+      color: #f5f5f5;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 25px;
+
+      font-weight: 900;
+
+      line-height: 1;
+  }
+
+
+  /* Texto dos Créditos */
+
+  .credit-card p {
+      margin-top: 22px;
+
+      color: #aaa;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 15px;
+
+      line-height: 1.8;
+  }
+
+
+  /* Hover dos Créditos */
+
+  .credit-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 0;
+      height: 4px;
+
+      background: #d10a04;
+
+      transition: width 0.3s ease;
+  }
+
+
+  /* Seção Final Créditos */
+
+  .credits-final {
+      position: relative;
+
+      min-height: 580px;
+
+      display: flex;
+
+      align-items: center;
+
+      background:
+          linear-gradient(
+              90deg,
+              rgba(0, 0, 0, 0.94) 0%,
+              rgba(0, 0, 0, 0.78) 50%,
+              rgba(0, 0, 0, 0.40) 100%
+          ),
+          url("/images/wallpaper-12.jpg");
+
+      background-size: cover;
+
+      background-position: center;
+
+      border-top: 1px solid #292929;
+  }
+
+
+  .credits-final-content {
+      width: min(1400px, 82%);
+
+      margin: 0 auto;
+  }
+
+
+  .credits-final h2 {
+      margin: 25px 0 0;
+
+      color: #f5f5f5;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: clamp(55px, 6vw, 95px);
+
+      font-weight: 900;
+
+      line-height: 0.9;
+  }
+
+
+  .credits-final h2 span {
+      color: #d10a04;
+  }
+
+
+  .credits-final .hero-button {
+      display: inline-flex;
+
+      margin-top: 40px;
+  }
+
+
+  /* Responsividade Créditos */
+
+  @media (max-width: 1000px) {
+
+      .credits-grid {
+          grid-template-columns: repeat(2, 1fr);
+      }
+
+  }
+
+
+  @media (max-width: 700px) {
+
+      .credits-hero {
+          min-height: 550px;
+      }
+
+      .credits-hero-content,
+      .credits-container,
+      .credits-final-content {
+          width: 88%;
+      }
+
+      .credits-grid {
+          grid-template-columns: 1fr;
+      }
+
+      .credit-card {
+          min-height: 220px;
+      }
+
+  }
+
+
+  @media (max-width: 600px) {
+
+      .credits-hero-content,
+      .credits-container,
+      .credits-final-content {
+          width: 90%;
+      }
+
+      .credits-hero h1 {
+          font-size: 60px;
+      }
+
+      .credits-hero-text {
+          font-size: 15px;
+      }
+
+      .credits-section {
+          padding: 75px 0 90px;
+      }
+
+      .credits-header h2 {
+          font-size: 42px;
+      }
+
+      .credits-final {
+          min-height: 500px;
+      }
+
+      .credits-final h2 {
+          font-size: 48px;
+      }
+
+  }
+
+  /* Estilização da págian de favoritos */
+
+
+/* Seção principal dos favoritos */
+
+.favoritos-main {
+
+    background: #030303;
+
+    color: #f5f5f5;
+
 }
 
 
-/* Responsividade Créditos */
+/* Hero dos favoritos */
 
-@media (max-width: 1000px) {
+.favoritos-hero {
 
-    .credits-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    position: relative;
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.94) 0%,
+            rgba(0, 0, 0, 0.75) 50%,
+            rgba(0, 0, 0, 0.45) 100%
+        ),
+
+        url("/images/wallpaper-4.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    border-bottom: 3px solid #d10a04;
 
 }
 
 
-@media (max-width: 700px) {
+.favoritos-hero-content {
 
-    .credits-hero {
-        min-height: 550px;
-    }
+    width: min(1400px, 82%);
 
-    .credits-hero-content,
-    .credits-container,
-    .credits-final-content {
+    margin: 0 auto;
+
+}
+
+
+.favoritos-hero .hero-subtitle {
+
+    color: #d10a04;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: 5px;
+
+}
+
+
+.favoritos-hero h1 {
+
+    margin: 20px 0 0;
+
+    color: #f5f5f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(70px, 8vw, 130px);
+
+    font-weight: 900;
+
+    line-height: 0.85;
+
+    letter-spacing: -4px;
+
+}
+
+
+.favoritos-hero h1 span {
+
+    color: #d10a04;
+
+}
+
+
+.favoritos-hero .hero-text {
+
+    max-width: 650px;
+
+    margin-top: 35px;
+
+    color: #d0d0d0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+.favoritos-hero .hero-button {
+
+    margin-top: 35px;
+
+}
+
+
+/* Seção de favoritos */
+
+.favoritos-section {
+
+    padding: 110px 0 130px;
+
+    background: #030303;
+
+}
+
+
+.favoritos-container {
+
+    width: min(1400px, 82%);
+
+    margin: 0 auto;
+
+}
+
+
+/* Título dos favoritos */
+
+.favoritos-title {
+
+    max-width: 700px;
+
+    margin-bottom: 70px;
+
+}
+
+
+.favoritos-subtitle {
+
+    margin: 0;
+
+    color: #d10a04;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: 5px;
+
+}
+
+
+.favoritos-title h2 {
+
+    margin: 20px 0 0;
+
+    color: #f5f5f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(45px, 5vw, 75px);
+
+    font-weight: 900;
+
+    line-height: 0.9;
+
+}
+
+
+.favoritos-title h2 span {
+
+    color: #d10a04;
+
+}
+
+
+.favoritos-title .title-line {
+
+    width: 92px;
+
+    height: 5px;
+
+    margin-top: 28px;
+
+    background: #d10a04;
+
+}
+
+
+.favoritos-description {
+
+    max-width: 650px;
+
+    margin-top: 30px;
+
+    color: #cfcfcf;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+}
+
+
+/* Estilização do formulário de favoritos */
+
+.favoritos-form-wrapper {
+
+    padding: 45px;
+
+    background: #080808;
+
+    border: 1px solid #292929;
+
+    border-left: 4px solid #d10a04;
+
+}
+
+
+.favoritos-form-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.form-number {
+
+    color: #d10a04;
+
+    font-size: 48px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-weight: 900;
+
+    font-style: italic;
+
+    line-height: 1;
+
+}
+
+
+.favoritos-form-header p {
+
+    margin: 0 0 6px;
+
+    color: #d10a04;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+}
+
+
+.favoritos-form-header h3 {
+
+    margin: 0;
+
+    color: #f5f5f5;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+.favoritos-form {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.form-group label {
+
+    color: #f5f5f5;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+}
+
+
+.form-group input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px 16px;
+
+    background: #111111;
+
+    border: 1px solid #333333;
+
+    color: #f5f5f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: border-color 0.2s ease,
+                background-color 0.2s ease;
+
+}
+
+
+.form-group input::placeholder {
+
+    color: #777777;
+
+}
+
+
+.form-group input:focus {
+
+    border-color: #d10a04;
+
+    background: #151515;
+
+}
+
+
+/* Campo de HP favoritos */
+
+.hp-input {
+
+    position: relative;
+
+}
+
+
+.hp-input input {
+
+    padding-right: 60px;
+
+}
+
+
+.hp-input span {
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #d10a04;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* estilização do botão de favoritos */
+
+.favoritos-submit {
+
+    grid-column: 1 / -1;
+
+    justify-self: start;
+
+    margin-top: 10px;
+
+    padding: 16px 25px;
+
+    border: none;
+
+    background: #d10a04;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.favoritos-submit:hover {
+
+    background: #ae0600;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* estilização da lista de favoritos */
+
+.favoritos-list-wrapper {
+
+    margin-top: 100px;
+
+}
+
+
+.favoritos-list-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+
+}
+
+
+.favoritos-list-header h2 {
+
+    margin: 12px 0 0;
+
+    color: #f5f5f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    font-weight: 900;
+
+    line-height: 0.9;
+
+}
+
+
+/* estilizaçaõ da tabela de favoritos */
+
+.favoritos-table-container {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #292929;
+
+}
+
+
+.favoritos-table {
+
+    width: 100%;
+
+    min-width: 900px;
+
+    border-collapse: collapse;
+
+}
+
+
+.favoritos-table thead {
+
+    background: #111111;
+
+    border-bottom: 3px solid #d10a04;
+
+}
+
+
+.favoritos-table th {
+
+    padding: 18px;
+
+    color: #d10a04;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+}
+
+
+.favoritos-table td {
+
+    padding: 20px 18px;
+
+    border-bottom: 1px solid #242424;
+
+    color: #cfcfcf;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+}
+
+
+.favoritos-table tbody tr {
+
+    background: #050505;
+
+    transition: background-color 0.2s ease;
+
+}
+
+
+.favoritos-table tbody tr:hover {
+
+    background: #101010;
+
+}
+
+
+.favorite-id {
+
+    color: #777777 !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-weight: 700;
+
+}
+
+
+.favorite-name {
+
+    color: #ffffff !important;
+
+    font-weight: 900;
+
+}
+
+
+.favorite-hp {
+
+    color: #d10a04 !important;
+
+    font-weight: 900;
+
+}
+
+
+/* botoões da tabela de favoritos */
+
+.favorite-actions {
+
+    display: flex;
+
+    gap: 8px;
+
+    white-space: nowrap;
+
+}
+
+
+.favorite-edit,
+.favorite-delete {
+
+    display: inline-block;
+
+    padding: 9px 13px;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+
+}
+
+
+.favorite-edit {
+
+    background: #d10a04;
+
+    color: #ffffff;
+
+}
+
+
+.favorite-edit:hover {
+
+    background: #ffffff;
+
+    color: #030303;
+
+}
+
+
+.favorite-delete {
+
+    background: #252525;
+
+    color: #ffffff;
+
+}
+
+
+.favorite-delete:hover {
+
+    background: #ffffff;
+
+    color: #030303;
+
+}
+
+
+.empty-favorites {
+
+    padding: 60px !important;
+
+    color: #777777 !important;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 13px !important;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* seção final */
+
+.favoritos-objective {
+
+    width: 100%;
+
+    min-height: 730px;
+
+    background: #000000;
+
+    overflow: hidden;
+
+}
+
+
+.favoritos-objective-content {
+
+    width: 90%;
+
+    max-width: 1600px;
+
+    min-height: 730px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 55% 45%;
+
+    align-items: center;
+
+}
+
+
+.favoritos-objective-text {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 70px 0;
+
+}
+
+
+.favoritos-objective-text .favoritos-subtitle {
+
+    margin-bottom: 20px;
+
+    color: #d10a04;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    letter-spacing: 7px;
+
+}
+
+
+.favoritos-objective h2 {
+
+    margin: 20px 0 0;
+
+    color: #f5f5f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(55px, 6vw, 95px);
+
+    font-weight: 900;
+
+    line-height: 0.9;
+
+}
+
+
+.favoritos-objective h2 span {
+
+    color: #d10a04;
+
+}
+
+
+.favoritos-objective-text > p:not(.favoritos-subtitle) {
+
+    max-width: 750px;
+
+    margin-top: 35px;
+
+    color: #d0d0d0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+}
+
+
+.favoritos-objective .hero-button {
+
+    display: inline-flex;
+
+    margin-top: 40px;
+
+}
+
+
+.favoritos-objective-image {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 650px;
+
+    overflow: hidden;
+
+}
+
+
+.favoritos-objective-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+.favoritos-objective-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        #000 0%,
+        rgba(0, 0, 0, 0.75) 10%,
+        rgba(0, 0, 0, 0.25) 35%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+
+}
+
+
+/* esponsividade */
+
+@media (max-width: 900px) {
+
+    .favoritos-hero-content {
+
         width: 88%;
+
     }
 
-    .credits-grid {
+
+    .favoritos-container {
+
+        width: 88%;
+
+    }
+
+
+    .favoritos-form {
+
         grid-template-columns: 1fr;
+
     }
 
-    .credit-card {
-        min-height: 220px;
+
+    .favoritos-submit {
+
+        grid-column: auto;
+
+    }
+
+
+    .favoritos-objective-content {
+
+        width: 88%;
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .favoritos-objective-image {
+
+        height: 450px;
+
     }
 
 }
@@ -2317,34 +3250,59 @@ body {
 
 @media (max-width: 600px) {
 
-    .credits-hero-content,
-    .credits-container,
-    .credits-final-content {
-        width: 90%;
+    .favoritos-hero {
+
+        min-height: 550px;
+
     }
 
-    .credits-hero h1 {
-        font-size: 60px;
+
+    .favoritos-hero h1 {
+
+        font-size: 65px;
+
     }
 
-    .credits-hero-text {
+
+    .favoritos-hero .hero-text {
+
         font-size: 15px;
+
     }
 
-    .credits-section {
+
+    .favoritos-section {
+
         padding: 75px 0 90px;
+
     }
 
-    .credits-header h2 {
-        font-size: 42px;
+
+    .favoritos-form-wrapper {
+
+        padding: 25px;
+
     }
 
-    .credits-final {
-        min-height: 500px;
+
+    .favoritos-list-header {
+
+        align-items: flex-start;
+
     }
 
-    .credits-final h2 {
-        font-size: 48px;
+
+    .favoritos-list-header .form-number {
+
+        font-size: 35px;
+
+    }
+
+
+    .favoritos-objective h2 {
+
+        font-size: 55px;
+
     }
 
 }
