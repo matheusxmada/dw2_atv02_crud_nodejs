@@ -16,7 +16,7 @@ import stratosEventos from "./data/stratosEventos.js";
 import peugeotEventos from "./data/peugeotEventos.js";
 
 // Importando os Controllers
-import ClienteController from "./controllers/ClienteController.js";
+
 import FavoritosController from "./controllers/FavoritoController.js";
 
 // Importando o Model de Favoritos
@@ -77,8 +77,6 @@ connection.authenticate()
 
 // Controllers
 
-// Iniciando as rotas de Cliente
-app.use(ClienteController);
 
 // Inicializando as rotas de Favoritos
 app.use(FavoritosController);
